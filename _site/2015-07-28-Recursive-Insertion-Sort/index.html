@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <title>Recursive-Insertion-Sort</title>
+
+  <meta name="author" content="Prateek Dwivedi" />
+
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Prateek Dwivedi - PhD Student in Theoretical Computer Science" href="/feed.xml" />
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="/css/main.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+  
+
+  
+
+  
+
+    <!-- Facebook OpenGraph tags -->
+  
+
+  
+  <meta property="og:title" content="Recursive-Insertion-Sort" />
+  
+
+   
+  <meta property="og:description" content="It’s hard to point merits of recursive procedures. But if one has to then it is the elegance and clarity of algorithms. For most of problems, recursive solution gives an intuition of the working of the algorithm. Though we have a very nice intuitive understanding of (usual) insertion sort, courtesy...">
+  
+
+
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="http://localhost:4000/2015-07-28-Recursive-Insertion-Sort/" />
+  <link rel="canonical" href="http://localhost:4000/2015-07-28-Recursive-Insertion-Sort/" />
+  
+
+  
+  <meta property="og:image" content="http://localhost:4000/img/ProfilePhoto.jpg" />
+  
+
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+  <meta name="twitter:title" content="Recursive-Insertion-Sort" />
+  
+
+  
+  <meta name="twitter:description" content="It’s hard to point merits of recursive procedures. But if one has to then it is the elegance and clarity of algorithms. For most of problems, recursive solution gives an intuition of the working of the algorithm. Though we have a very nice intuitive understanding of (usual) insertion sort, courtesy...">
+  
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/img/ProfilePhoto.jpg" />
+  
+
+  
+
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+
+
+  <body>
+
+    
+
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+        <a class="navbar-brand" href="http://localhost:4000">Prateek Dwivedi</a>
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/aboutme">About Me</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/">Resources</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="/">Blog</a>
+
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href="http://localhost:4000 ">
+	      <img class="avatar-img" src="/img/ProfilePhoto.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Recursive-Insertion-Sort</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on July 28, 2015</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      
+
+      <article role="main" class="blog-post">
+        <p>It’s hard to point merits of recursive procedures. But if one has to then it is the elegance and clarity of algorithms. For most of problems, recursive solution gives an intuition of the working of the algorithm. Though we have a very nice intuitive understanding of (usual) insertion sort, courtesy CLRS, that may not be the case always. For Insertion sort, recursive algorithm really gives a different prospective to working of insertion sort.</p>
+
+<h2 id="insertion-sort-analogy">INSERTION-SORT Analogy</h2>
+
+<blockquote>
+  <p>“We start with an empty left hand and the cards face down on the table. We then remove one card at a time from the table and insert it into the correct position in the left hand. To find the correct position for a card, we compare it with each of the cards already in the hand, from right to left, as illustrated in figure above. At all times, the cards held in the left hand are sorted, and these cards were originally the top cards of the pile on the table.”
+-CLRS</p>
+</blockquote>
+
+<h2 id="iterative-insertion-sort-algorithm">ITERATIVE INSERTION-SORT ALGORITHM</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSERTION-SORT(A) 
+1 for j = 2 to length[A] 
+2 do key = A[j] 
+3   Insert A[j] into the sorted sequence A[1 . . j − 1]. 
+4   i = j − 1 
+5   while i &gt; 0 and A[i] &gt; key 
+6     do A[i + 1] = A[i] 
+7     i = i − 1 
+8   A[i + 1] = key
+</code></pre></div></div>
+
+<h2 id="recursive-insertion-sort">Recursive insertion-sort</h2>
+
+<p>Insertion sort can be expressed as a recursive procedure as follows. In order to sort $A[1 . . n]$, we recursively sort $A[1 . . n−1]$ and then insert $A[n]$ into the sorted array $A[1 . . n − 1]$.</p>
+
+<h3 id="algorithm">Algorithm</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSERT(element, A, n)
+1. if n &lt; 1
+2.   A[0] = element
+3. else if element &gt;= A[n]
+4.   A[n+1] = element
+5. else
+6.   A[n+1] = A[n]
+7.   INSERT(element, A, n-1)
+
+RECURSIVE-INSERTION-SORT(A,n)
+1. if n &lt; 2
+2.   return A
+3. else
+4.   RECURSIVE-INSERTION-SORT(A,n-1)
+5.   INSERT(A[n], A, n-1)
+</code></pre></div></div>
+
+<h3 id="implementation-in-python">Implementation in Python</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">insert</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">element</span>
+    <span class="k">elif</span> <span class="n">element</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">gt</span><span class="p">;</span><span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">n</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">element</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">A</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+            <span class="n">insert</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">insertion_sort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">A</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">insertion_sort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">insert</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">A</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Unsorted</span> <span class="n">Array</span><span class="p">:</span> <span class="o">%</span><span class="n">s</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">%</span><span class="n">A</span><span class="p">)</span>
+<span class="n">insertion_sort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="n">Sorted</span> <span class="n">Array</span><span class="p">:</span> <span class="o">%</span><span class="n">s</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">%</span><span class="n">A</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="o">&amp;</span><span class="n">quot</span><span class="p">;</span><span class="o">---</span> <span class="o">%</span><span class="n">s</span> <span class="n">seconds</span> <span class="o">---&amp;</span><span class="n">quot</span><span class="p">;</span> <span class="o">%</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="explanation">Explanation</h2>
+<p>Insert is a utility function which recursively adds element in the given array A of size n in order. For example if we use insert to add 1 in an array $A = [2]$ or if we use it to add 2 in an array $A = [1]$; in both the cases we get $A = [1,2]$. In the algorithm above we use this function to insert an element $A[i]$ in sorted array $A[1..i-1]$.</p>
+
+<p>Insertion-Sort is a function which takes an array A to be sorted and n (number of element in A). The function recursively call itself to sort sub-array $A[1..n-1]$ and then insert $A[n]$ in  $A[1..n-1]$. This recursive call maintain that insertion of element is performed on a sorted array</p>
+
+<h3 id="demonstration-of-recursive-call">DEMONSTRATION OF RECURSIVE CALL</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Call INSERTION-SORT with A = [5,4,3,2,1], n = 5
+  Call INSERTION-SORT with A = [5,4,3,2], n = 4
+    Call INSERTION-SORT with A = [5,4,3], n = 3
+      Call INSERTION-SORT with A = [5,4], n = 2
+        INSERT 4 in A = [5] and n = 1
+        return A = [4,5]
+      INSERT 3 IN A = [4,5] and n = 2
+      return A = [3,4,5]
+    INSERT 2 in A = [3,4,5] and n = 3
+    return A = [2,3,4,5]
+  INSERT 1 in A = [2,3,4,5] and n = 4
+  return A = [1,2,3,4,5]
+</code></pre></div></div>
+
+<h2 id="analysis">Analysis</h2>
+<p>Let $T(n)$ be the running time on a problem of size n. </p>
+
+<p>When $n = 1, \ T(n) = \Theta (1)$. However, when $n &gt; 1, \ T(n)$ is the sum of time taken to sort the array of size n-1 and time taken to insert the last element in the sorted array.</p>
+
+<p>Next question to trigger on is what is the running time of Insert? If we try to analyse we see that the method recursively reduce the array by one to find the right place to fit in the element. For that, in worst case the method will go through each element in the array; which will cost $\Theta (n)$</p>
+
+<p>Thus $T(n) = T(n-1) + \Theta (n)$ for $n &gt; 1$. Expand it out few times, observe the pattern. Use the tools of geometric progression to convince yourself that $T(n)=O\left(n^2\right)$.</p>
+
+<h2 id="conclusion">CONCLUSION</h2>
+<p>After understanding Recursive Insertion-Sort algorithm read the analogy mentioned at the start of this post from the book Introduction to Algorithm. You will find that even in case of Recursive algorithm we maintain that analogy but now our view point is upside-down.</p>
+
+<p>There is no extra work to do in case of Recursive Insertion-Sort. Algorithm will first pick up the second element from the array and insert it in the sorted array to its left, currently with only one element. Next it will pick the third element and inserted it in the sorted array to its left which now have 2 element in sorted order. We do this until the last element of array. At last we have a sorted array.</p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          Tags:
+          
+          
+            <a href="/tags#insertion-sort">insertion-sort</a>
+          
+            <a href="/tags#recursion">recursion</a>
+          
+          
+        </div>
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+  <!--- Share on Twitter -->
+    <a href="https://twitter.com/intent/tweet?text=Recursive-Insertion-Sort+http://localhost:4000/2015-07-28-Recursive-Insertion-Sort/"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pager blog-pager">
+        
+        
+        <li class="next">
+          <a href="/2018-06-05-IITK-Interview-Experience/" data-toggle="tooltip" data-placement="top" title="IIT Kanpur PhD Interview Experience">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+        <div class="disqus-comments">
+          
+        </div>
+          
+        <div class="staticman-comments">
+          
+
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container-fluid beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-5 col-lg-offset-4">
+        <!-- <ul class="list-inline text-center footer-links"><li><a href="mailto:pdwivedi [at] cse [dot] iitk [dot] ac [dot] in" title="Email me"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-envelope fa-stack-1x fa-inverse" style="color:#404040"></i>
+                </span>
+              </a>
+            </li><li><a href="https://twitter.com/prateekdwv" title="Twitter"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse" style="color:#404040"></i>
+                </span>
+              </a>
+            </li></ul> -->
+      <p class="copyright text-muted">
+      Prateek Dwivedi
+      &nbsp;&bull;&nbsp;
+      2019
+
+      
+
+      
+      </p>
+          <!-- Please don't remove this, keep my open source work credited :) -->
+    <p class="theme-by text-muted">
+      Theme by
+      <a href="https://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+    </p>
+      </div>
+
+      <div class="col-lg-3 hidden-xs hidden-sm hidden-md"  style="border-left:2px solid; border-color:darkgray;">
+          <h3 class="list-inline text-muted">Contact</h3>
+          <p class="text-muted">
+            KD213, <br> Department of Computer Science and Engineering, <br>
+            Indian Institute of Technology Kanpur, <br>
+            Kanpur-208016, INDIA <br>
+            Office: +91 512 259 7123
+          </p>
+      </div>
+
+      <div class="visible-xs visible-sm visible-md hidden-lg"  style="text-align:center">
+        <h3 class="list-inline text-muted" style="padding-top: 20px">Contact</h3>
+        <p class="text-muted" style="margin:15px">
+          KD213, <br> Department of Computer Science and Engineering, <br>
+          Indian Institute of Technology Kanpur, <br>
+          Kanpur-208016, INDIA <br>
+          Office: +91 512 259 7123
+        </p>
+    </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="/js/main.js"></script>
+    
+  
+
+
+  
+  </body>
+</html>
