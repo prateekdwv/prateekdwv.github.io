@@ -1,0 +1,28 @@
+---
+layout: base
+---
+
+{% include header.html type="page" %}
+
+<div class="container-fluid" role="main">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      {{ content }}
+	    {% if page.comments %}
+        <div class="disqus-comments">
+	        {% include disqus.html %}
+        </div>
+	        {% include fb-comment.html %}
+        <div class="staticman-comments">
+          {% include staticman-comments.html %}
+        </div>
+	    {% endif %}
+    </div>
+    <div class="col-md-3 col-sm-12">
+        <div id="panel-twitter">
+                <a class="twitter-timeline" data-height="400" href="https://twitter.com/prateekdwv?ref_src=twsrc%5Etfw">Tweets by prateekdwv</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
+      
+  </div>
+</div>

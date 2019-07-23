@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/2015-07-28-Recursive-Insertion-Sort/</loc>
+<loc>http://localhost:4000/pdwivedi/2015-07-28-Recursive-Insertion-Sort/</loc>
 <lastmod>2015-07-28T00:00:00-07:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2018-06-05-IITK-Interview-Experience/</loc>
+<loc>http://localhost:4000/pdwivedi/2018-06-05-IITK-Interview-Experience/</loc>
 <lastmod>2018-06-05T00:00:00-07:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/2019-01-13-Exact-Median/</loc>
+<loc>http://localhost:4000/pdwivedi/2019-01-13-Exact-Median/</loc>
 <lastmod>2019-01-13T00:00:00-08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/aboutme/</loc>
+<loc>http://localhost:4000/pdwivedi/aboutme/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/contact/</loc>
+<loc>http://localhost:4000/pdwivedi/contact/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/</loc>
+<loc>http://localhost:4000/pdwivedi/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/tags/</loc>
+<loc>http://localhost:4000/pdwivedi/tags/</loc>
 </url>
 </urlset>
