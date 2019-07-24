@@ -1,7 +1,15 @@
 <footer>
   <div class="container-fluid beautiful-jekyll-footer">
     <div class="row">
-      <div class="col-lg-5 col-lg-offset-4">
+      <div class="col-lg-3">
+          <blockquote>
+              {{ site.author.quote }}
+              {% if site.author.quote-cite %}
+                <cite>{{ site.author.quote-cite }}</cite>
+              {% endif %}
+          </blockquote>
+      </div>
+      <div class="col-lg-6">
         <!-- <ul class="list-inline text-center footer-links">
           {%- for link in site.social-network-links -%}
             {%- assign curkey = link[0] -%}

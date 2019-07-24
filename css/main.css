@@ -798,3 +798,43 @@ td.gutter {
   font-style: italic;
   font-size: 16px;
 }
+
+.text-muted{
+  color: white;
+}
+
+blockquote {
+  font-family: Georgia, serif;
+  font-size:28px;
+  font-style: italic;
+  width: 500px;
+  border-left-color: {{ site.footer-col }};
+  margin: 0.25em 0;
+  padding: 30px 60px;
+  line-height: 1.45;
+  position: relative;
+  color: white;
+  }
+  
+  blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 120px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: black;
+
+  }
+  
+  blockquote cite {
+  color: white;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+  }
+   
+  blockquote cite:before {
+  content: "\2014 \2009";
+  }

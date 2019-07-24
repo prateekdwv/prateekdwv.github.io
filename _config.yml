@@ -67,6 +67,8 @@ footer-link-col: "#ffffff"
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
   name: Prateek Dwivedi
+  quote: Drink a glass of water, people these days are unknowingly dehydrated.
+  quote-cite: Kenneth Reitz
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
