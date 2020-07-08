@@ -838,3 +838,8 @@ blockquote {
   blockquote cite:before {
   content: "\2014 \2009";
   }
+
+  .profile-img-container .profile-img {
+    width: 100%;
+    display: block;
+  }

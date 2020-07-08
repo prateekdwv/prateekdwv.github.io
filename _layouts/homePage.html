@@ -7,6 +7,9 @@ layout: base
 <div class="container-fluid" role="main">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
+      <div class="profile-img-container">
+        <img class="profile-img" src="{{ site.avatar | prepend: site.baseurl | replace: '//', '/' }}" />
+      </div>
       {{ content }}
 	    {% if page.comments %}
         <div class="disqus-comments">

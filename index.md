@@ -1,6 +1,6 @@
 ---
-layout: page
-title: About me
+layout: homePage
+title: Prateek Dwivedi
 subtitle: PhD Student in Theoretical Computer Science
 ---
 
