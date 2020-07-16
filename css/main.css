@@ -807,15 +807,25 @@ td.gutter {
 
 blockquote {
   font-family: Georgia, serif;
-  font-size:28px;
   font-style: italic;
-  width: 500px;
   border-left-color: {{ site.footer-col }};
   margin: 0.25em 0;
-  padding: 30px 60px;
+  padding: 20px 0px 20px 60px;
   line-height: 1.45;
   position: relative;
   color: white;
+  }
+
+  @media only screen and (min-width: 768px){
+    blockquote{
+      font-size: 24px;
+    }
+  }
+
+  @media only screen and (max-width: 767px){
+    blockquote{
+      font-size: 20px;
+    }
   }
   
   blockquote:before {
@@ -835,8 +845,9 @@ blockquote {
   font-size: 14px;
   display: block;
   margin-top: 5px;
+  text-align: right;
   }
-   
+
   blockquote cite:before {
   content: "\2014 \2009";
   }
@@ -844,4 +855,30 @@ blockquote {
   .profile-img-container .profile-img {
     width: 100%;
     display: block;
+  }
+
+  .contact {
+    padding-top: 20px;
+  }
+
+  .contact-heading {
+    text-align: center;
+  }
+
+  .contact-content {
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 992px){
+    .contact{
+      border-left:2px solid; 
+      border-color:darkgray;
+    }
+    .contact-heading {
+      text-align: left;
+    }
+  
+    .contact-content {
+      text-align: left;
+    }
   }
