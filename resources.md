@@ -29,6 +29,10 @@ subtitle: My recommendations for everyone
     - [TIFR, Spring 2019](https://www.tcs.tifr.res.in/~ramprasad/courses/2019-algComp/) - _by [Ramprasad Saptharishi](https://www.tcs.tifr.res.in/~ramprasad/)._
     - [MIT, Spring 2012](https://people.csail.mit.edu/madhu/ST12/) - _by [Madhu Sudan](http://people.csail.mit.edu/madhu)._
 
+# Posts
+
+- [How I Learned to Stop Worrying](https://blogs.scientificamerican.com/guest-blog/the-awesomest-7-year-postdoc-or-how-i-learned-to-stop-worrying-and-love-the-tenure-track-faculty-life/) - _Radhika Nagpal_
+
 # Blogs
 
 - [Gödel's Lost Letter and P=NP](https://rjlipton.wordpress.com/) - _by Dick Lipton and Ken Regan._
