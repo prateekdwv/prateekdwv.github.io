@@ -25,7 +25,8 @@ description: PhD Student in Theoretical Computer Science
 # List of links in the navigation bar
 navbar-links:
   Resources: "resources"
-  #Blog: "blog"
+  Research: "research"
+  # Blog: "blog"
     #- Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
     #- Learn markdown: "http://www.markdowntutorial.com/"
     #- GitHub Pages: "https://pages.github.com/"
