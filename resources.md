@@ -29,7 +29,7 @@ subtitle: My recommendations for everyone
 
 # Posts and Essays
 - [How I Learned to Stop Worrying](https://blogs.scientificamerican.com/guest-blog/the-awesomest-7-year-postdoc-or-how-i-learned-to-stop-worrying-and-love-the-tenure-track-faculty-life/) - _Radhika Nagpal_
-- [Who Can Name the Bigger Number?](https://www.scottaaronson.com/writings/bignumbers.html#:~:text=Like%20many%20other%20big%2Dnumber,been%20millions%20of%20times%20bigger.&text=An%20exponential%3A%20a%20number%20multiplied%20by%20itself%20999%20times.)
+- [Who Can Name the Bigger Number?](https://www.scottaaronson.com/writings/bignumbers.html#:~:text=Like%20many%20other%20big%2Dnumber,been%20millions%20of%20times%20bigger.&text=An%20exponential%3A%20a%20number%20multiplied%20by%20itself%20999%20times.) - _Scott Aaronson_
 
 # Blogs
 
