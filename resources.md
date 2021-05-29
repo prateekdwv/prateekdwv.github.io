@@ -7,12 +7,10 @@ subtitle: My recommendations for everyone
 # Textbooks
 
 1. Algorithms - Design and Analysis
-
     -  Introduction to Algorithms - _by [Cormen, Leiserson, Rivest and Stein](https://mitpress.mit.edu/books/introduction-algorithms-third-edition)._
     - Algorithms - _by [Dasgupta, Papadimitriou, Vazirani](https://cseweb.ucsd.edu/~dasgupta/book/index.html)._
 
 2. Computational Complexity
-
     - Computational Complexity: A Modern Approach - _by [Arora and Barak](http://theory.cs.princeton.edu/complexity/)._
 
 # Courses
