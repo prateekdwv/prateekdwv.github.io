@@ -12,4 +12,4 @@ subtitle: My papers in reverse chronological order
 - Deterministic identity testing paradigms for bounded top-fanin depth-4 circuits.
 : *with Pranjal Dutta and Nitin Saxena* <br/>
 *36th Computational Complexity Conference (CCC), 2021.* <br/>
-[Paper](/papers/pit-depth4-didi.pdf)
+[Paper](/papers/pit-depth4-didi.pdf) | [Video](https://youtu.be/kK4283WJ7HI)
