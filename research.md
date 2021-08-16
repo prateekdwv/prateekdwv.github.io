@@ -6,7 +6,7 @@ subtitle: My papers in reverse chronological order
 
 - Demystifying the border of depth-3 algebraic circuits.
 : *with Pranjal Dutta and Nitin Saxena* <br/>
-*submitted, 2021.*  <br/>
+*62nd Annual Symposium on Foundations of Computer Science (FOCS), 2021*  <br/>
 [Paper](/papers/border-depth3.pdf)
 
 - Deterministic identity testing paradigms for bounded top-fanin depth-4 circuits.
