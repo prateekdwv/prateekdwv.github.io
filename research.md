@@ -8,7 +8,7 @@ subtitle: My papers in reverse chronological order
 : *with Pranjal Dutta and Nitin Saxena* <br/>
 *62nd Annual Symposium on Foundations of Computer Science (FOCS), 2021*  <br/>
 *Invited in the special issue of SIAM Journal on Computing (SICOMP)*<br/>
-[Paper](/papers/border-depth3-confversion.pdf) | [Full Version](/papers/border-depth3.pdf)
+[Paper](/papers/border-depth3-confversion.pdf) | [Full Version](/papers/border-depth3.pdf) | [Video](https://youtu.be/z8cVPKhmrLU)
 
 - Deterministic identity testing paradigms for bounded top-fanin depth-4 circuits.
 : *with Pranjal Dutta and Nitin Saxena* <br/>
