@@ -136,9 +136,10 @@ google_analytics: "UA-172366957-1"
 
 # Staticman support
 staticman:
-  repository : # GitHub username/repository eg. "daattali/beautiful-jekyll"
-  branch     : # eg. "master" If you're not using `master` branch, then you also need to update the `branch` parameter in `staticman.yml`
-  endpoint   : # URL of your own deployment (with trailing slash) (will fallback to a public GitLab instance)
+  gitprovider : "github"
+  repository : "prateekdwv/prateekdwv.github.io"
+  branch     : "master"
+  endpoint   : https://nice-pink-sheep-shoe.cyclic.app/
   reCaptcha:
     # reCaptcha for Staticman (OPTIONAL)
     # If you use reCaptcha, you must also set these parameters in staticman.yml
