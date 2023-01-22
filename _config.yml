@@ -135,16 +135,16 @@ google_analytics: "UA-172366957-1"
 # fb_comment_id: ""
 
 # Staticman support
-staticman:
-  gitprovider : "github"
-  repository : "prateekdwv/prateekdwv.github.io"
-  branch     : "master"
-  endpoint   : https://nice-pink-sheep-shoe.cyclic.app/
-  reCaptcha:
-    # reCaptcha for Staticman (OPTIONAL)
-    # If you use reCaptcha, you must also set these parameters in staticman.yml
-    siteKey  : # Use your own site key, you need to apply for one on Google
-    secret   : # ENCRYPT your password by going to https://staticman3.herokuapp.com/v3/encrypt/<your-site-secret>
+# staticman:
+#   gitprovider : "github"
+#   repository : "prateekdwv/prateekdwv.github.io"
+#   branch     : "master"
+#   endpoint   : https://nice-pink-sheep-shoe.cyclic.app/
+#   reCaptcha:
+#     # reCaptcha for Staticman (OPTIONAL)
+#     # If you use reCaptcha, you must also set these parameters in staticman.yml
+#     siteKey  : # Use your own site key, you need to apply for one on Google
+#     secret   : # ENCRYPT your password by going to https://staticman3.herokuapp.com/v3/encrypt/<your-site-secret>
 
 # --- Misc --- #
 
@@ -165,7 +165,7 @@ title-separator: "-"
 timezone: "America/Vancouver"
 markdown: kramdown
 highlighter: rouge
-permalink: /:year-:month-:day-:title/
+permalink: blog/:title/
 paginate: 5
 paginate_path: "/blog/page:num/"
 
