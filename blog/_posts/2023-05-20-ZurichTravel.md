@@ -1,0 +1,38 @@
+---
+layout: post
+title: Theory School in the foothills of the Swiss Alps
+subtitle: First internation trip to attend theory winter school in Switzerland
+---
+
+Apart from proving theorems and occasionally living those Eureka moments, Travelling and exploring new places is one of the satisfying perks of being in Academia. I'm not going to deny that I was looking forward to it when I started my PhD in 2018 - and then we had the pandemic. After a long wait, I finally had a chance to attend a Theory Winter School in Zinal, Switzerland, in January. It was undoubtedly the most surreal experience of my life, and I couldn't have expected it to be any better. I am blogging about it to preserve my experience, mostly the parts which cannot be captured in any other way better.
+
+## Theory Winter School - Switzerland
+
+It was the second edition of the winter school on theoretical computer science co-organised by EPFL and ETH Zurich in the foothills of Swiss alps. Five days, three courses, twelve lectures, and ample time for leisure activities and discussion - the program perhaps has the most attractive schedule of the workshops I have encountered. The workshop is particularly exclusive since invitations are extended after some profile evaluation of applicants - I couldn't get it in the first edition even though it had lectures much closer to my research interests. Nonetheless, I got the inivation this time, and it was time to fly to Switzerland.
+
+The department generously agreed to fund my travel and visa, while the organisers arranged shared accommodation and meals. Except for the part that the Schengen Visa Application require a lot of paperwork, getting the visa was easy, primarily because the country encourages tourism and education. It helped me book inexpensive flight tickets on Lot Polish Airlines, saving me enough from the approved funds to spend an extra day in Zurich to explore the city at the end of the trip. Much to my surprise, the travel was smooth, including the immigration on both Indian and Switzerland borders. On the four-and-a-half-hour journey from Zurich to Zinal with two train and two bus changes, I was filled with admiration for the public transport system of the country - especially the punctuality. On the journey, I saw the long stretch of green fields with snowy white mountains in the background, and I could not believe the mesmerising natural beauty. Zinal is a small town, famous particularly among the snow sports enthusiast, and Hotel Europe - our stay - was barely a few steps from the final bus stop.
+
+Lectures of Ryan Williams on proving circuit lower bounds was the closest it would get to my current research interest, which made his talk naturally approachable. Ryan's work connecting circuit lower bounds to algorithms have gained popularity and helped achieve a new perspective on complexity theory problems. Rasmus Kyung's lectures had a primary objective to explain their celebrated result - Maximum Flow and Minimum-Cost Flow in Almost-Linear Time. While Yin Tat Lee's lectures gave a comprehensive introduction to Convex Optimization. I was unfamiliar with many topics covered in Winter School, including the ones covered in Williams' lectures. Moreover, it exposed me to many new tools for exploration, perhaps later in my research career.
+
+![Zurich](/img/Switzerland.png)
+
+My entire day in Zurich was to explore the city and its cuisine. In a well-connected city like Zurich, it was easy to experience many places in a limited time. But I was particularly interested in the Old-town region of the city, which is why I booked a budget hostel in that area. With three hours in the Museum, two for the guided tour, and a rest for exploring food and purchasing souvenirs, I executed an almost perfect plan. It wasn't my first time exploring a city alone, so some experience helped, but I only did it in India, so I wasn't confident. To my surprise and contrary to many travel advice on the Internet, language wasn't a barrier in Zurich, though it was in Zinal. As a vegetarian, I did not struggle for meals anywhere, though I had to clarify the difference with being Vegan in most places. Zurich was an expensive city, so I did not purchase anything but chocolates - I bought too many fine Swiss chocolates. I returned from Zurich with the same airlines, with most of the time spent thinking about another trip to Europe, which I'll talk about in more detail in an upcoming post.
+
+## Trivias
+
+The exhilarating experience of visiting another country which is different in language, culture, and food is difficult to express in words. However, I'll share some titbits from my trip that I enjoyed the most. 
+
+Zinal, our workshop destination, is a popular choice among Europeans for adventure snow sports - skiing, snowboarding, paragliding, and snowshoe hiking, to list a few. Kids as young as five years of age pick up snow sports, which I find similar to Indian kids' pickup cycling, which perhaps is not as adventurous as skiing. Though I considered going Snowshoe hiking before the workshop, later, I had to change my plans and instead try Gondola (cable car) ride. The scenic view from the top of the mountains was incredible. It was so windy on the top that adjusting to the dropping temperature took a while - even after proper layering and insulation. At times it was awkward for only two of us to be there for the view rather than for skiing or other sport activity.
+
+The passion for cheese in food was noticeable from early on. It was delicious and different from the usual American-style cheese we use in India. The most delicious snack  I tried was chunks of certain salty cheese with pieces of bread. It was admirable to see the enthusiasm for fruits in breakfast; there was always a variety of them available daily. As a coffee and chocolate aficionado, I couldn't help but try so many different types of drinks with coffee, chocolate or sometimes both that I felt content at the end of the trip.
+
+There were no unusual hiccups during the entire trip, and I could plan it well in advance. But most importantly, it was because everything there was predictable, particularly the public transport system. My international roaming ended the morning I was leaving for India, though my hostel in Zurich had Wifi, I did not want to unnecessarily recharge just for the use of a few hours as I would get enough Internet in the airport anyways. So I planned to be off the grid for my journey to the airport from Old Town Zurich. After confirming the timing of the train, I checked out and walked towards the station early in the morning on an almost empty street. I was amazed at the punctuality of the train, which among other things, helped me build confidence in the city infrastructure. I reached my destination on time and returned online when I was inside the airport.
+
+My long layover in Poland made me think of the regrets from my trip - in hindsight, I definitely should be able to list a few. One was not to try any snow activity like skiing or snowshoe hiking, which I intended to do before the trip. Another mistake I made was to withdraw cash, which I did not use throughout my journey, as everywhere cards worked. Finally, while in Zurich, I wanted to visit ETH Zurich, but there was just not enough time. What more could I have done? Let me know your thoughts @prateekdwv.
+
+
+
+
+ 
+
+> Written with [StackEdit](https://stackedit.io/).
