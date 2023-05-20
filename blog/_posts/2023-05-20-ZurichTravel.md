@@ -29,10 +29,3 @@ The passion for cheese in food was noticeable from early on. It was delicious an
 There were no unusual hiccups during the entire trip, and I could plan it well in advance. But most importantly, it was because everything there was predictable, particularly the public transport system. My international roaming ended the morning I was leaving for India, though my hostel in Zurich had Wifi, I did not want to unnecessarily recharge just for the use of a few hours as I would get enough Internet in the airport anyways. So I planned to be off the grid for my journey to the airport from Old Town Zurich. After confirming the timing of the train, I checked out and walked towards the station early in the morning on an almost empty street. I was amazed at the punctuality of the train, which among other things, helped me build confidence in the city infrastructure. I reached my destination on time and returned online when I was inside the airport.
 
 My long layover in Poland made me think of the regrets from my trip - in hindsight, I definitely should be able to list a few. One was not to try any snow activity like skiing or snowshoe hiking, which I intended to do before the trip. Another mistake I made was to withdraw cash, which I did not use throughout my journey, as everywhere cards worked. Finally, while in Zurich, I wanted to visit ETH Zurich, but there was just not enough time. What more could I have done? Let me know your thoughts @prateekdwv.
-
-
-
-
- 
-
-> Written with [StackEdit](https://stackedit.io/).
