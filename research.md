@@ -4,6 +4,11 @@ title: Research
 subtitle: My papers in reverse chronological order
 ---
 
+- Lower Bounds for the Sum of Small-Size Algebraic Branching Programs.
+: *with C.S. Bhargav and Nitin Saxena* <br/>
+*Submitted* <br/>
+[Paper](/papers/smABP-lowerbounds-confversion.pdf)
+
 - Demystifying the border of depth-3 algebraic circuits.
 : *with Pranjal Dutta and Nitin Saxena* <br/>
 *62nd Annual Symposium on Foundations of Computer Science (FOCS), 2021*  <br/>
