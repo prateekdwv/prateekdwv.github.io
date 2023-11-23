@@ -4,6 +4,11 @@ title: Research
 subtitle: My papers in reverse chronological order
 ---
 
+- Learning the coefficients: A presentable version of border complexity and applications to circuit factoring.
+: *with C.S. Bhargav and Nitin Saxena* <br/>
+*Submitted* <br/>
+[Paper](/papers/PresentableVNP-confversion.pdf)
+
 - Lower Bounds for the Sum of Small-Size Algebraic Branching Programs.
 : *with C.S. Bhargav and Nitin Saxena* <br/>
 *Submitted* <br/>
