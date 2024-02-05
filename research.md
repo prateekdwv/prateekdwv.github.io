@@ -11,7 +11,7 @@ subtitle: My papers in reverse chronological order
 
 - Lower Bounds for the Sum of Small-Size Algebraic Branching Programs.
 : *with C.S. Bhargav and Nitin Saxena* <br/>
-*Submitted* <br/>
+*19th Annual Conference o Theory and Applications of Models of Computation (TAMC), 2024 * <br/>
 [Paper](/papers/smABP-lowerbounds-confversion.pdf)
 
 - Demystifying the border of depth-3 algebraic circuits.
