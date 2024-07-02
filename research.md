@@ -7,7 +7,7 @@ subtitle: My papers in reverse chronological order
 - Learning the coefficients: A presentable version of border complexity and applications to circuit factoring.
 : *with C.S. Bhargav and Nitin Saxena* <br/>
 *56th Annual ACM Symposium on Theory of Computing (STOC), 2024* <br/>
-[Paper](/papers/PresentableVNP-confversion.pdf)
+[Paper](/papers/PresentableVNP-confversion.pdf) | [Video](https://youtu.be/V1XWkX_ZSZQ?si=yZBu5bgJTJXs1LAt)
 
 - Lower Bounds for the Sum of Small-Size Algebraic Branching Programs.
 : *with C.S. Bhargav and Nitin Saxena* <br/>
