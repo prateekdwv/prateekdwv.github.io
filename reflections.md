@@ -9,7 +9,7 @@ subtitle: Knowledge disseminating in the form of Talks and Seminars.
 [Slides](/slides/2024-arco.pdf)
 
 - Presentable Version of Border Complexity and Applications to Circuit Factoring<br/>
-*[Welcome talk](https://barc.ku.dk/events/barc-talk-by-prateek-dwivedi/) at the Theory Group, ITU, and BARC, KU*<br/>
+*Welcome talk at the Theory Group, ITU, and [BARC, KU]((https://barc.ku.dk/events/barc-talk-by-prateek-dwivedi/))*<br/>
 [Slides](/slides/2024-itu.pdf)
 
 - Treading the Border Complexity and Identity Testing Paradigms.<br/>
