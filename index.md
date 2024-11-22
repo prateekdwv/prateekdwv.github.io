@@ -1,7 +1,7 @@
 ---
 layout: homePage
 title: Prateek Dwivedi
-subtitle: PhD Student in Theoretical Computer Science
+subtitle: Computer Science Theoretician
 ---
 
 I'm currently a postdoctoral researcher in the Theory Group at the [IT University of Copenhagen](https://www.itu.dk/) working with [Prof. Nutan Limaye](https://www.itu.dk/~nuli/index.html). Previously, I was a PhD student in the Department of [Computer Science and Engineering](https://cse.iitk.ac.in/) at [Indian Institute of Technology Kanpur](http://iitk.ac.in/), under the guidance of [Prof Nitin Saxena](https://cse.iitk.ac.in/users/nitin/).
