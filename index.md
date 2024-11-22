@@ -4,7 +4,7 @@ title: Prateek Dwivedi
 subtitle: PhD Student in Theoretical Computer Science
 ---
 
-I'm a final year PhD student in department of [Computer Science and Engineering](https://cse.iitk.ac.in/) at [Indian Institute of Technology Kanpur](http://iitk.ac.in/) under the guidance of [Prof Nitin Saxena](https://cse.iitk.ac.in/users/nitin/). Before this I did my Bachelors in Computer Science Engineeing from [KCC ITM, Gr Noida](https://www.kccitm.edu.in/) an affiliated institution of [Dr. APJ Abdul Kalam Technical University, Lucknow](https://aktu.ac.in/).
+I'm currently a postdoctoral researcher in the [Theory Group](https://www.itu.dk/) at the [IT University of Copenhagen](https://www.itu.dk/) working with [Prof. Nutan Limaye](https://www.itu.dk/~nuli/index.html). Previously, I was a PhD student in the Department of [Computer Science and Engineering](https://cse.iitk.ac.in/) at [Indian Institute of Technology Kanpur](http://iitk.ac.in/), under the guidance of [Prof Nitin Saxena](https://cse.iitk.ac.in/users/nitin/).
 
 My research interest lies in the area of Theoretical Computer Science. Specifically, I work in the domain of Algebraic Complexity Theory. At times I also like to spend time to study areas like Graph Theory, Algorithms, Computational Number Theory and Group Testing Problems. 
 
