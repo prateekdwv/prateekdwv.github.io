@@ -9,8 +9,8 @@ subtitle: Knowledge disseminating in the form of Talks and Seminars.
 [Slides](/slides/2024-arco.pdf)
 
 - Presentable Version of Border Complexity and Applications to Circuit Factoring<br/>
-Welcome talk at the Theory Group, ITU, and BARC, KU<br/>
-[Slides](/slides/2024-itu.pdf) | [Announcement](https://barc.ku.dk/events/barc-talk-by-prateek-dwivedi/)
+[Welcome talk](https://barc.ku.dk/events/barc-talk-by-prateek-dwivedi/) at the Theory Group, ITU, and BARC, KU<br/>
+[Slides](/slides/2024-itu.pdf)
 
 - Deterministic identity testing paradigms for​ bounded top-fanin depth-4 circuits​<br/>
 *7th Workshop on Algebraic Complexity Theory ([WACT](https://www.dcs.warwick.ac.uk/~u2270030/wact/)), Warwick 2023*<br/>
