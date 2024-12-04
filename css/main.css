@@ -853,10 +853,14 @@ blockquote {
   }
 
   .profile-img-container .profile-img {
-    width: 40%;
+    max-width: 250px;
+    height: auto;
     display: block;
-    border-radius: .25rem!important;
+    border-radius: 2%;
     float: right!important;
+    margin-left: 30px;
+    margin-bottom: 15px;
+    margin-top: 30px;
   }
 
   .contact {
