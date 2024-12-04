@@ -853,7 +853,7 @@ blockquote {
   }
 
   .profile-img-container .profile-img {
-    max-width: 250px;
+    max-width: 375px;
     height: auto;
     display: block;
     border-radius: 2%;
