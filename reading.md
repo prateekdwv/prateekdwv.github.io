@@ -7,7 +7,7 @@ A list of books I am currently reading or have read in the past. Strongly recomm
 
 {% for entry in site.data.reading %}
 ## {{ entry.year}}
-
+{{ entry.books | size }}
 {% for book in entry.books %}
 - {{ book.title }} {% if book.star %} ★ {% endif %}
 : *{{ book.author }}* <br/>
