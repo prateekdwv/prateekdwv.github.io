@@ -11,6 +11,6 @@ A list of books I am currently reading or have read in the past. Strongly recomm
 {% for book in entry.books %}
 - {{ book.title }} {% if book.star %} ★ {% endif %}
 : *{{ book.author }}* <br/>
-{% if book.status != "completed" %}Status: {{ book.status }} {% endif %}
+Status: {{ book.status }} | Format: {{ book.format }}
 {% endfor %}
 {% endfor %}
