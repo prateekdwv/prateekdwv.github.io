@@ -1,0 +1,91 @@
+- year: "2025"
+  books:
+  -
+    title: "Why Nations Fail : The Origins of Power, Prosperity, and Poverty"
+    author: "Daron Acemoglu and James A. Robinson"
+    link: "https://voices.uchicago.edu/jamesrobinson/2018/06/21/why-nations-fail/"
+    status: "50%"
+    format: "audio"
+  -
+    title: "The Blind Watchmaker"
+    author: "Richard Dawkins"
+    link: "https://www.richarddawkins.com/books/book/the-blind-watchmaker"
+    status: "85%"
+    star: yes
+    format: "ebook"
+  -
+    title: "मुझे चाँद चाहिए"
+    author: "Surendra Verma"
+    link: "https://archive.org/details/in.ernet.dli.2015.464311"
+    status: "50%"
+    format: "print"
+- year: "2024"
+  books:
+    -
+      title: "The Haj"
+      author: "Leon Uris"
+      link: "https://www.penguinrandomhouse.com/books/182053/the-haj-by-leon-uris/"
+      status: "completed"
+      format: "print"
+    -
+      title: "The Book Thief"
+      author: "Markus Zusak"
+      link: "https://www.markuszusak.com/the-book-thief"
+      status: "completed"
+      star: yes
+      format: "print"
+    -
+      title: "कोहबर की शर्त"
+      author: "Keshav Prasad Mishra"
+      status: "completed"
+      format: "print"
+- year: "2023"
+  books:
+    -
+      title: "A Man Called Ove"
+      author: "Fredrik Backman"
+      status: "completed"
+      star: yes
+      format: "ebook"
+    -
+      title: "चौदह फेरे"
+      author: "Shivani"
+      status: "completed"
+      format: "print"
+    -
+      title: "Suheldev & The Battle of Bahraich"
+      author: "Vikas Singh and Amish Tripathi"
+      status: "completed"
+      format: "print"
+    -
+      title: "The Handmaid's Tale"
+      author: "Margaret Atwood"
+      star: yes
+      status: "completed"
+      format: "ebook"
+    -
+      title: "तमस"
+      author: "Bhisham Sahni"
+      star: yes
+      status: "completed"
+      format: "print"
+    -
+      title: "The Winning Way: Learnings from Sport for Managers"
+      author: "Anita Bhogle and Harsha Bhogle"
+      status: "completed"
+      format: "print"
+    -
+      title: "Mossad: The Greatest Missions of the Israeli Secret Service"
+      author: "Michael Bar-Zohar and Nissim Mishal"
+      status: "completed"
+      format: "print"
+    -
+      title: "तितली"
+      author: "Jaishankar Prasad"
+      status: "completed"
+      format: "print"
+    -
+      title: "The Wall of Ascension"
+      author: "Brandon Sanderson"
+      status: "completed"
+      format: "ebook"
