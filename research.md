@@ -13,7 +13,7 @@ subtitle: My papers in reverse chronological order
 : *with C.S. Bhargav and Nitin Saxena* <br/>
 *19th Annual Conference of Theory and Applications of Models of Computation (TAMC), 2024* <br/>
 *Invited in the special issue of Theoretical Computer Science(Theor. Comput. Sci.)*<br/>
-[Paper](/papers/smABP-lowerbounds-confversion.pdf)
+[Paper](/papers/smABP-lowerbounds-confversion.pdf) | [Full Version](/papers/smABP-lowerbounds-fullversion.pdf)
 
 - Demystifying the border of depth-3 algebraic circuits.
 : *with Pranjal Dutta and Nitin Saxena* <br/>
