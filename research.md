@@ -6,7 +6,7 @@ subtitle: My papers in reverse chronological order
 
 - Monotone Bounded-Depth Complexity of Homomorphism Polynomials.
 : *with C. S. Bhargav, Shiteng Chen, Radu Curticapean* <br/>
-*arxiv, 2024* <br/>
+*arxiv, 2025* <br/>
 [Paper](https://arxiv.org/abs/2505.22894#) | [Slides](https://www.prateekdwivedi.in/slides/2024-arco.pdf)
 
 - Learning the coefficients: A presentable version of border complexity and applications to circuit factoring.
