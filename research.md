@@ -9,8 +9,8 @@ subtitle: My papers in reverse chronological order
 *arxiv, 2025* <br/>
 [Paper](https://arxiv.org/abs/2505.22894#) | [Slides](https://www.prateekdwivedi.in/slides/2024-arco.pdf)
 
-- Treading the Borders for Explicitness, Circuit Factoring, and Identity Testing.<br/>
-*PhD Thesis, CSE IIT Kanpur, 2025*
+- Treading the Borders for Explicitness, Circuit Factoring, and Identity Testing.
+:*PhD Thesis, CSE IIT Kanpur, 2025*<br/>
 [Thesis](/papers/thesis.pdf)
 
 - Learning the coefficients: A presentable version of border complexity and applications to circuit factoring.
