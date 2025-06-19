@@ -4,6 +4,11 @@ title: Research
 subtitle: My papers in reverse chronological order
 ---
 
+- A primer on the closure of algebraic complexity classes under factoring.
+: *Survey, 2025*<br/>
+*To appear in the proceedings of Recent Trends in Computer Algebra ([RTCA](https://rtca2023.github.io/))*<br/>
+[Survey](/papers/factor-survey.pdf)
+
 - Monotone Bounded-Depth Complexity of Homomorphism Polynomials.
 : *with C. S. Bhargav, Shiteng Chen, Radu Curticapean* <br/>
 *arxiv, 2025* <br/>
