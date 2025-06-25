@@ -7,7 +7,7 @@ subtitle: My papers in reverse chronological order
 - A primer on the closure of algebraic complexity classes under factoring.
 : *with C. S. Bhargav and Nitin Saxena* <br/>
 *To appear in the proceedings of Recent Trends in Computer Algebra ([RTCA](https://rtca2023.github.io/)), 2025*<br/>
-[Survey](/papers/factor-survey.pdf)
+[Survey](https://arxiv.org/abs/2506.19604)
 
 - Monotone Bounded-Depth Complexity of Homomorphism Polynomials.
 : *with C. S. Bhargav, Shiteng Chen, Radu Curticapean* <br/>
