@@ -3,6 +3,7 @@ layout: page
 title: Research
 subtitle: My papers in reverse chronological order
 ---
+<!-- https://www.prateekdwivedi.in/papers/ro-nonclosure.pdf -->
 
 - A primer on the closure of algebraic complexity classes under factoring.
 : *with C. S. Bhargav and Nitin Saxena* <br/>
@@ -12,7 +13,7 @@ subtitle: My papers in reverse chronological order
 - Monotone Bounded-Depth Complexity of Homomorphism Polynomials.
 : *with C. S. Bhargav, Shiteng Chen, Radu Curticapean* <br/>
 *50th International Symposium on Mathematical Foundations of Computer Science (MFCS), 2025* <br/>
-[Paper](https://arxiv.org/abs/2505.22894#) | [Slides](https://www.prateekdwivedi.in/slides/2024-arco.pdf)
+[Paper](/papers/monotone-constdp-hompoly.pdf) | [Slides](https://www.prateekdwivedi.in/slides/2024-arco.pdf)
 
 - Treading the Borders for Explicitness, Circuit Factoring, and Identity Testing.
 : *PhD Thesis, CSE IIT Kanpur, 2025*<br/>
