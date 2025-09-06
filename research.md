@@ -8,7 +8,7 @@ subtitle: My papers in reverse chronological order
 - On Closure Properties of Read-Once Oblivious Algebraic Branching Programs
 : *with Jules Armand, Magnus Hansen, Nutan Limaye, Srikanth Srinivasan, and Sébastien Tavenas* <br/>
 *Submitted, 2025*<br/>
-[pdf](https://www.prateekdwivedi.in/papers/ro-nonclosure.pdf)
+[Paper](https://www.prateekdwivedi.in/papers/ro-nonclosure.pdf)
 
 - A primer on the closure of algebraic complexity classes under factoring
 : *with C. S. Bhargav and Nitin Saxena* <br/>
