@@ -3,7 +3,6 @@ layout: page
 title: Research
 subtitle: My papers in reverse chronological order
 ---
-<!-- https://www.prateekdwivedi.in/papers/ro-nonclosure.pdf -->
 
 - On Closure Properties of Read-Once Oblivious Algebraic Branching Programs
 : *with Jules Armand, Magnus Hansen, Nutan Limaye, Srikanth Srinivasan, and Sébastien Tavenas* <br/>
