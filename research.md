@@ -3,6 +3,10 @@ layout: page
 title: Research
 subtitle: My papers in reverse chronological order
 ---
+- Lower Bounds in Algebraic Complexity via Symmetry and Homomorphism Polynomials
+: *with Benedikt Pago and Tim Seppelt* <br/>
+*Submitted, 2025*<br/>
+[Paper]()
 
 - On Closure Properties of Read-Once Oblivious Algebraic Branching Programs
 : *with Jules Armand, Magnus Hansen, Nutan Limaye, Srikanth Srinivasan, and Sébastien Tavenas* <br/>
