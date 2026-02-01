@@ -5,7 +5,7 @@ subtitle: My papers in reverse chronological order
 ---
 - Lower Bounds in Algebraic Complexity via Symmetry and Homomorphism Polynomials
 : *with Benedikt Pago and Tim Seppelt* <br/>
-*Submitted, 2025*<br/>
+*58th Annual ACM Symposium on Theory of Computing (STOC), 2026*<br/>
 [Paper](https://doi.org/10.48550/arXiv.2601.09343)<br/>
 
 - On Closure Properties of Read-Once Oblivious Algebraic Branching Programs
