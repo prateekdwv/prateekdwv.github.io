@@ -11,6 +11,7 @@ subtitle: My papers in reverse chronological order
 - On Closure Properties of Read-Once Oblivious Algebraic Branching Programs
 : *with Robert Andrews, Jules Armand, Magnus Hansen, Nutan Limaye, Srikanth Srinivasan, and Sébastien Tavenas* <br/>
 *17th Innovations in Theoretical Computer Science (ITCS), 2025*<br/>
+*Highlights of Algorithms (HALG), 2026*
 [Paper](https://www.prateekdwivedi.in/papers/ro-nonclosure-confversion.pdf)<br/>
 
 - A primer on the closure of algebraic complexity classes under factoring
