@@ -813,7 +813,7 @@ blockquote {
   padding: 20px 0px 20px 60px;
   line-height: 1.45;
   position: relative;
-  color: white;
+  color: inherit;
   }
 
   @media only screen and (min-width: 768px){
@@ -836,12 +836,13 @@ blockquote {
   position: absolute;
   left: -20px;
   top: -20px;
-  color: black;
+  color: currentColor;
+  opacity: 0.3;
 
   }
   
   blockquote cite {
-  color: white;
+  color: inherit;
   font-size: 14px;
   display: block;
   margin-top: 5px;
