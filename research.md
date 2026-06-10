@@ -6,12 +6,12 @@ subtitle: My papers in reverse chronological order
 - Lower Bounds in Algebraic Complexity via Symmetry and Homomorphism Polynomials
 : *with Benedikt Pago and Tim Seppelt* <br/>
 *58th Annual ACM Symposium on Theory of Computing (STOC), 2026*<br/>
-[Paper](https://doi.org/10.48550/arXiv.2601.09343)<br/>
+[Paper](/papers/symACT-confversion.pdf) | [Full Version](https://doi.org/10.48550/arXiv.2601.09343)<br/>
 
 - On Closure Properties of Read-Once Oblivious Algebraic Branching Programs
 : *with Robert Andrews, Jules Armand, Magnus Hansen, Nutan Limaye, Srikanth Srinivasan, and Sébastien Tavenas* <br/>
 *17th Innovations in Theoretical Computer Science (ITCS), 2025*<br/>
-*Highlights of Algorithms (HALG), 2026*
+*Highlights of Algorithms (HALG), 2026*<br/>
 [Paper](https://www.prateekdwivedi.in/papers/ro-nonclosure-confversion.pdf)<br/>
 
 - A primer on the closure of algebraic complexity classes under factoring
