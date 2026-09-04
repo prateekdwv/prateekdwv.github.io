@@ -4,7 +4,7 @@ title: Prateek Dwivedi
 subtitle: Computer Science Theoretician
 ---
 
-I'm currently a postdoctoral researcher in the Theory Group at the IT University of Copenhagen working with [Prof. Nutan Limaye](https://www.itu.dk/~nuli/index.html). Previously, I was a PhD student at Indian Institute of Technology Kanpur, under the guidance of [Prof Nitin Saxena](https://cse.iitk.ac.in/users/nitin/).
+I'm currently a [DAAD PRIME fellow](https://www.daad.de/en/studying-in-germany/scholarships/daad-funding-programmes/prime/) at Saarland University, working with [Prof. Markus Bläser](https://cc.cs.uni-saarland.de/mblaeser/), and at Université Savoie Mont Blanc, working with [Sébastien Tavenas](https://tavenas.pages.math.cnrs.fr/home.html). Previously, I was a postdoctoral researcher in the Theory Group at the IT University of Copenhagen, working with [Prof. Nutan Limaye](https://www.itu.dk/~nuli/index.html), and a PhD student at the Indian Institute of Technology Kanpur, under the guidance of [Prof. Nitin Saxena](https://cse.iitk.ac.in/users/nitin/).
 
 My research interest lies in the area of Theoretical Computer Science. Specifically, I work in the domain of Algebraic Complexity Theory. At times I also like to spend time to study areas like Graph Theory, Algorithms, Computational Number Theory and Group Testing Problems. 
 
