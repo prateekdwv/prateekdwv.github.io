@@ -3,6 +3,10 @@ layout: page
 title: Research
 subtitle: My papers in reverse chronological order
 ---
+- Tight lower bounds for algebraic communication and applications
+: *with Manon Blanc, Magnus Rahbek Dalgaard Hansen, Nutan Limaye, and Meena Mahajan* <br/>
+*Submitted, 2026*<br/>
+
 - Lower Bounds in Algebraic Complexity via Symmetry and Homomorphism Polynomials
 : *with Benedikt Pago and Tim Seppelt* <br/>
 *58th Annual ACM Symposium on Theory of Computing (STOC), 2026*<br/>
