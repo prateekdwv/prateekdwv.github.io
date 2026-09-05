@@ -1,9 +1,17 @@
----
-layout: base
----
-
-<div class="intro-header"></div>
-
-<div role="main" class="container">
-  {{ content }}
-</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  </head>
+  <body>
+    <header>
+      <h1>{{ page.title | default: site.title }}</h1>
+      {% if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}
+    </header>
+    <main>
+      {{ content }}
+    </main>
+  </body>
+</html>

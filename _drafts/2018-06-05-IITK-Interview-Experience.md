@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: IIT Kanpur PhD Interview Experience
 tags:   [experience, Ph.D. Diary]
 ---

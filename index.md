@@ -1,5 +1,5 @@
 ---
-layout: homePage
+layout: default
 title: Prateek Dwivedi
 subtitle: Computer Science Theoretician
 ---

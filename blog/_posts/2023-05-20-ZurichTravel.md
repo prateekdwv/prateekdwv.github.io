@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Theory School in the foothills of the Swiss Alps
 subtitle: First international trip to attend theory winter school in Switzerland
 ---

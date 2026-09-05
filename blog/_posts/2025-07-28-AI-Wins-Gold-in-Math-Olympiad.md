@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: AI Wins Gold in Math Olympiad
 subtitle: AI reaches new milestone by solving hardest school-level math problems
 ---

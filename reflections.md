@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Reflections
 subtitle: Knowledge disseminating in the form of Talks and Seminars.
 ---

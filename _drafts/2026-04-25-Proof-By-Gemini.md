@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Lower Bounds via Gemini
 subtitle: New arXiv upload proves lower bounds for circuits with the help of Gemini
 ---

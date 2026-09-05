@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: Contact
 #subtitle: PhD Student in Theoretical Computer Science
 ---

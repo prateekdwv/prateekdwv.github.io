@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Recursive-Insertion-Sort
 tags:   [insertion-sort, recursion]
 ---

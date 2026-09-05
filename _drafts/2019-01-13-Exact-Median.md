@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: Randomized Exact Median
 tags:   [median, randomized-algorithm]
 ---
