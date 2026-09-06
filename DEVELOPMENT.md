@@ -7,6 +7,8 @@ bundle install
 npm ci
 ```
 
+The expected Node.js version is recorded in `.nvmrc`. If you use `nvm`, select it with `nvm use` before installing dependencies.
+
 Build the generated Tailwind stylesheet before building the website:
 
 ```sh
@@ -25,3 +27,5 @@ bundle exec jekyll serve
 ```
 
 The Tailwind input is `_tailwind/main.css`. Its generated `assets/css/main.css` output is intentionally excluded from Git.
+
+Tailwind scans Jekyll layouts, includes, and HTML page templates. Keep Tailwind classes in those component files and write complete class names instead of constructing them from Liquid fragments. Markdown should use Jekyll includes when it needs a styled component.
