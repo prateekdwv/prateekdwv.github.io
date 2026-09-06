@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: post
 title: AI Wins Gold in Math Olympiad
 subtitle: AI reaches new milestone by solving hardest school-level math problems
+bluesky_post: https://bsky.app/profile/prateekdwv.bsky.social/post/3muu2g3run22a
 ---
 
 OpenAI recently announced that its generative AI model had achieved a Gold medal performance in the International Mathematical Olympiad (IMO). Shortly thereafter, Demis Hassabis—CEO of Google DeepMind and Nobel laureate—announced that their model has achieved the same performance. Last year, their specialized model called AlphaProof and AlphaGeometry could only manage a Silver.

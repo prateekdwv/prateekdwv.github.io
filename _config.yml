@@ -1,7 +1,9 @@
 title: Prateek Dwivedi
 description: PhD Student in Theoretical Computer Science
-url: "https://prateekdwv.github.io/"
+url: "https://www.prateekdwivedi.in"
 baseurl: ""
+
+bluesky_did: "did:plc:y7erwx4j5fxmxafbg3wkhxf3"
 
 timezone: America/Vancouver
 markdown: kramdown

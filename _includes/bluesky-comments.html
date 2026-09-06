@@ -1,0 +1,16 @@
+{% assign bluesky_post_id = page.bluesky_post | split: "/" | last %}
+{% capture bluesky_uri %}at://{{ site.bluesky_did }}/app.bsky.feed.post/{{ bluesky_post_id }}{% endcapture %}
+<section aria-labelledby="discussion-heading">
+  <h2 id="discussion-heading">Discussion</h2>
+  <p>
+    <a href="{{ page.bluesky_post | escape }}">Reply on Bluesky to join the discussion.</a>
+  </p>
+  <bsky-comments uri="{{ bluesky_uri | strip | escape }}" sort="asc">
+    <p>Loading discussion from Bluesky&hellip;</p>
+  </bsky-comments>
+  <noscript>
+    <p>JavaScript is required to display the discussion on this page.</p>
+  </noscript>
+</section>
+
+<script type="module" src="{{ '/assets/vendor/bsky-comments/bsky-comments.js' | relative_url }}"></script>

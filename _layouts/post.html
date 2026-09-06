@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<article>
+  {{ content }}
+</article>
+
+{% if page.bluesky_post %}
+  {% include bluesky-comments.html %}
+{% endif %}

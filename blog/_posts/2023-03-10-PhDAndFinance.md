@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: PhD and Finances
 subtitle: Managing finances during graduate studies 
 ---
