@@ -1,0 +1,12 @@
+- label: Home
+  url: /
+- label: Research
+  url: /research/
+- label: Reflections
+  url: /reflections/
+- label: Blog
+  url: /blog/
+- label: Reading
+  url: /reading/
+- label: Contact
+  url: /contact/

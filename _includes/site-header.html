@@ -1,0 +1,26 @@
+<header class="box-border h-16 border-b border-black/15 bg-white">
+  <nav class="mx-auto flex h-full w-full max-w-[90rem] box-border items-center justify-between px-6 md:px-10" aria-label="Primary navigation">
+    <a href="{{ '/' | relative_url }}" class="text-lg font-semibold tracking-wide text-black no-underline">
+      Prateek Dwivedi
+    </a>
+
+    <ul class="m-0 hidden list-none items-center gap-7 p-0 md:flex">
+      {% for item in site.data.navigation %}
+        <li>
+          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page" class="font-semibold text-black underline decoration-2 underline-offset-8"{% else %} class="text-black no-underline hover:underline hover:underline-offset-8 focus-visible:underline focus-visible:underline-offset-8"{% endif %}>{{ item.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <details class="relative md:hidden">
+      <summary class="cursor-pointer list-none text-black marker:content-none">Menu</summary>
+      <ul class="absolute right-0 z-40 m-0 mt-3 min-w-44 box-border list-none border border-black/20 bg-white p-3 shadow-lg">
+        {% for item in site.data.navigation %}
+          <li>
+            <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page" class="block px-3 py-2 font-semibold text-black underline"{% else %} class="block px-3 py-2 text-black no-underline hover:bg-black/5 focus-visible:bg-black/5"{% endif %}>{{ item.label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </details>
+  </nav>
+</header>

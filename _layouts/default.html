@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <title>{% if page.title and page.title != site.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | absolute_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     {% if page.bluesky_post %}
       <link rel="preconnect" href="https://public.api.bsky.app" crossorigin>
@@ -11,12 +12,16 @@
       <link rel="modulepreload" href="{{ '/assets/vendor/bsky-comments/bsky-comments.js' | relative_url }}">
     {% endif %}
   </head>
-  <body>
-    <header>
-      <h1>{{ page.title | default: site.title }}</h1>
-      {% if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}
-    </header>
-    <main>
+  <body class="m-0 bg-white font-sans text-black antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:text-black">Skip to content</a>
+    {% include site-header.html %}
+    <main id="main-content"{% unless page.layout == "home" %} class="mx-auto box-border w-full max-w-4xl px-6 py-10 md:px-10"{% endunless %}>
+      {% unless page.layout == "home" %}
+        <header>
+          <h1>{{ page.title | default: site.title }}</h1>
+          {% if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}
+        </header>
+      {% endunless %}
       {{ content }}
     </main>
   </body>
