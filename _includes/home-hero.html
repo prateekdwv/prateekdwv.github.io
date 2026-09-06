@@ -1,7 +1,7 @@
-<section class="mx-auto grid box-border h-full w-full max-w-[90rem] items-stretch md:grid-cols-[minmax(0,3fr)_minmax(18rem,2fr)]" aria-labelledby="home-heading">
-  <div class="flex items-center px-6 py-12 md:px-6 lg:px-16 lg:py-10">
+<section class="grid box-border h-full w-full items-stretch md:grid-cols-[minmax(0,3fr)_minmax(18rem,2fr)] lg:grid-cols-[minmax(0,11fr)_minmax(18rem,9fr)]" aria-labelledby="home-heading">
+  <div class="flex items-center px-6 py-12 md:px-6 lg:py-10 lg:pl-[max(2.5rem,calc((100vw-90rem)/2+2.5rem))] lg:pr-6">
     <div class="max-w-3xl">
-      <h1 id="home-heading" class="m-0 text-4xl font-semibold leading-tight tracking-tight text-black sm:text-5xl md:whitespace-nowrap md:text-[1.75rem] lg:text-[2.75rem] xl:text-5xl">
+      <h1 id="home-heading" class="m-0 text-4xl font-semibold leading-tight tracking-tight text-black sm:text-5xl md:whitespace-nowrap md:text-[1.75rem] lg:text-4xl">
         Computer Science Theoretician
       </h1>
       <p class="mt-7 max-w-2xl text-lg leading-8 text-black/70">
@@ -10,9 +10,7 @@
     </div>
   </div>
 
-  <figure class="m-0 flex items-center justify-center border-t border-black/15 px-6 py-10 md:border-l md:border-t-0 md:px-10 md:py-6">
-    <div class="aspect-[4/5] w-full max-w-[16rem] overflow-hidden border border-black/20 sm:max-w-[18rem] md:max-w-[20rem]">
-      <img src="{{ '/img/ProfilePhoto.jpg' | relative_url }}" alt="Portrait of Prateek Dwivedi" width="1643" height="1886" loading="eager" fetchpriority="high" decoding="async" class="h-full w-full object-cover object-center">
-    </div>
+  <figure class="relative isolate m-0 aspect-[4/5] overflow-hidden border-t border-black/15 bg-white md:aspect-auto md:border-t-0">
+    <img src="{{ '/img/ProfilePhoto.jpeg' | relative_url }}" alt="Portrait of Prateek Dwivedi" width="3265" height="3265" loading="eager" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
   </figure>
 </section>
