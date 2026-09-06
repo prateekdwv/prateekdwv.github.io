@@ -3,7 +3,7 @@
 <section aria-labelledby="discussion-heading">
   <h2 id="discussion-heading">Discussion</h2>
   <p>
-    <a href="{{ page.bluesky_post | escape }}">Reply on Bluesky to join the discussion.</a>
+    <a href="{{ page.bluesky_post | escape }}" target="_blank" rel="noopener noreferrer">Reply on Bluesky to join the discussion.</a>
   </p>
   <bsky-comments uri="{{ bluesky_uri | strip | escape }}" sort="asc">
     <p>Loading discussion from Bluesky&hellip;</p>
