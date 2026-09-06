@@ -1,0 +1,132 @@
+- year: 2026
+  publications:
+    - title: "Tight lower bounds for algebraic communication and applications"
+      coauthors:
+        - "Manon Blanc"
+        - "Magnus Rahbek Dalgaard Hansen"
+        - "Nutan Limaye"
+        - "Meena Mahajan"
+      details:
+        - "Submitted, 2026"
+      links: []
+
+    - title: "Lower Bounds in Algebraic Complexity via Symmetry and Homomorphism Polynomials"
+      coauthors:
+        - "Benedikt Pago"
+        - "Tim Seppelt"
+      details:
+        - "58th Annual ACM Symposium on Theory of Computing (STOC), 2026"
+      links:
+        - label: "Paper"
+          url: "/papers/symACT-confversion.pdf"
+        - label: "Full Version"
+          url: "https://doi.org/10.48550/arXiv.2601.09343"
+
+- year: 2025
+  publications:
+    - title: "On Closure Properties of Read-Once Oblivious Algebraic Branching Programs"
+      coauthors:
+        - "Robert Andrews"
+        - "Jules Armand"
+        - "Magnus Hansen"
+        - "Nutan Limaye"
+        - "Srikanth Srinivasan"
+        - "Sébastien Tavenas"
+      details:
+        - "17th Innovations in Theoretical Computer Science (ITCS), 2025"
+        - "Highlights of Algorithms (HALG), 2026"
+      links:
+        - label: "Paper"
+          url: "https://www.prateekdwivedi.in/papers/ro-nonclosure-confversion.pdf"
+
+    - title: "A primer on the closure of algebraic complexity classes under factoring"
+      coauthors:
+        - "C. S. Bhargav"
+        - "Nitin Saxena"
+      details:
+        - "To appear in the proceedings of Recent Trends in Computer Algebra ([RTCA](https://rtca2023.github.io/)), 2025"
+      links:
+        - label: "Survey"
+          url: "https://arxiv.org/abs/2506.19604"
+
+    - title: "Monotone Bounded-Depth Complexity of Homomorphism Polynomials"
+      coauthors:
+        - "C. S. Bhargav"
+        - "Shiteng Chen"
+        - "Radu Curticapean"
+      details:
+        - "50th International Symposium on Mathematical Foundations of Computer Science (MFCS), 2025"
+      links:
+        - label: "Paper"
+          url: "/papers/monotone-constdp-hompoly.pdf"
+        - label: "Slides"
+          url: "slides/2024-arco.pdf"
+
+    - title: "Treading the Borders for Explicitness, Circuit Factoring, and Identity Testing"
+      coauthors: []
+      details:
+        - "PhD Thesis, CSE IIT Kanpur, 2025"
+      links:
+        - label: "Thesis"
+          url: "/papers/thesis.pdf"
+        - label: "Slides"
+          url: "/slides/defense-slides.pdf"
+
+- year: 2024
+  publications:
+    - title: "Learning the coefficients: A presentable version of border complexity and applications to circuit factoring"
+      coauthors:
+        - "C. S. Bhargav"
+        - "Nitin Saxena"
+      details:
+        - "56th Annual ACM Symposium on Theory of Computing (STOC), 2024"
+      links:
+        - label: "Paper"
+          url: "/papers/PresentableVNP-confversion.pdf"
+        - label: "Video"
+          url: "https://youtu.be/V1XWkX_ZSZQ"
+
+    - title: "Lower Bounds for the Sum of Small-Size Algebraic Branching Programs"
+      coauthors:
+        - "C. S. Bhargav"
+        - "Nitin Saxena"
+      details:
+        - "19th Annual Conference of Theory and Applications of Models of Computation (TAMC), 2024"
+        - "Invited in the special issue of Theoretical Computer Science(Theor. Comput. Sci.)"
+      links:
+        - label: "Paper"
+          url: "/papers/smABP-lowerbounds-confversion.pdf"
+        - label: "Full Version"
+          url: "/papers/smABP-lowerbounds-fullversion.pdf"
+
+- year: 2021
+  publications:
+    - title: "Demystifying the border of depth-3 algebraic circuits"
+      coauthors:
+        - "Pranjal Dutta"
+        - "Nitin Saxena"
+      details:
+        - "62nd Annual Symposium on Foundations of Computer Science (FOCS), 2021"
+        - "Invited in the special issue of SIAM Journal on Computing (SICOMP)"
+      links:
+        - label: "Paper"
+          url: "/papers/border-depth3-confversion.pdf"
+        - label: "Full Version"
+          url: "/papers/border-depth3-fullversion.pdf"
+        - label: "Video"
+          url: "https://youtu.be/z8cVPKhmrLU"
+
+    - title: "Deterministic identity testing paradigms for bounded top-fanin depth-4 circuits"
+      coauthors:
+        - "Pranjal Dutta"
+        - "Nitin Saxena"
+      details:
+        - "36th Computational Complexity Conference (CCC), 2021"
+        - "To appear in Theory of Computing (ToC), 2026"
+      links:
+        - label: "Paper"
+          url: "/papers/pit-depth4-didi.pdf"
+        - label: "Full Version"
+          url: "/papers/pit-depth4-didi-fullversion.pdf"
+        - label: "Video"
+          url: "https://youtu.be/kK4283WJ7HI"
