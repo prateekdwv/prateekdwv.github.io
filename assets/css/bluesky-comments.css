@@ -1,0 +1,60 @@
+bsky-comments {
+  display: block;
+}
+
+.bsky-summary,
+.bsky-actions,
+.bsky-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+}
+
+.bsky-summary {
+  border-top: 1px solid currentColor;
+  padding-top: 1rem;
+}
+
+.bsky-thread {
+  border-top: 1px solid currentColor;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.bsky-comment {
+  margin-top: 1rem;
+}
+
+.bsky-replies {
+  border-left: 2px solid currentColor;
+  margin-left: 0.75rem;
+  padding-left: 1rem;
+}
+
+.bsky-body p {
+  margin: 0.5rem 0;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.bsky-actions {
+  font-size: 0.9em;
+}
+
+.bsky-icon {
+  margin-right: 0.25rem;
+}
+
+.bsky-comment-reply {
+  font-size: 1.25em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+@media (max-width: 35rem) {
+  .bsky-replies {
+    margin-left: 0.35rem;
+    padding-left: 0.65rem;
+  }
+}

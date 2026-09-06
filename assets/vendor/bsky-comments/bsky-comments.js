@@ -1,5 +1,5 @@
 // bsky-comments 1.0.1, Copyright (c) 2026 Florian Schepp, MIT License.
-// Modified locally to omit author avatars. See the adjacent LICENSE file.
+// Modified locally for the site's threaded, avatar-free presentation. See the adjacent LICENSE file.
 var u = Object.defineProperty;
 var _ = (d, l, e) => l in d ? u(d, l, { enumerable: !0, configurable: !0, writable: !0, value: e }) : d[l] = e;
 var o = (d, l, e) => _(d, typeof l != "symbol" ? l + "" : l, e);
@@ -12,6 +12,7 @@ class v extends HTMLElement {
     o(this, "_service", m);
     o(this, "_iconLike", "❤️");
     o(this, "_iconReply", "💬");
+    o(this, "_iconRepost", "♻️");
     o(this, "_sortOrder", "asc");
     o(this, "_depth", 10);
     o(this, "_data", null);
@@ -21,7 +22,7 @@ class v extends HTMLElement {
     o(this, "_abortController", null);
   }
   static get observedAttributes() {
-    return ["post", "uri", "service", "icon-like", "icon-reply", "sort", "depth"];
+    return ["post", "uri", "service", "icon-like", "icon-reply", "icon-repost", "sort", "depth"];
   }
   attributeChangedCallback(e, s, t) {
     if (s !== t) {
@@ -40,6 +41,9 @@ class v extends HTMLElement {
           break;
         case "icon-reply":
           this._iconReply = t || "💬";
+          break;
+        case "icon-repost":
+          this._iconRepost = t || "♻️";
           break;
         case "sort":
           this._sortOrder = t === "desc" ? "desc" : "asc";
@@ -109,8 +113,9 @@ class v extends HTMLElement {
     }
     return c += this.escapeHtml(i.decode(n.slice(f))), c;
   }
-  formatDate(e) {
-    return "· " + new Date(e).toLocaleDateString(void 0, { month: "short", day: "numeric", year: "numeric" });
+  countLabel(e, s, t = `${s}s`) {
+    const r = e ?? 0;
+    return `${r} ${r === 1 ? s : t}`;
   }
   sortReplies(e) {
     return [...e].sort((s, t) => {
@@ -129,17 +134,16 @@ class v extends HTMLElement {
           <div class="bsky-meta">
             <a href="https://bsky.app/profile/${encodeURIComponent(s.author.handle)}" target="_blank" rel="noopener noreferrer" class="bsky-author">
               ${this.escapeHtml(s.author.displayName || s.author.handle)}
-            </a>
-            <span class="bsky-handle">@${this.escapeHtml(s.author.handle)}</span>
-            <a href="${i}" target="_blank" rel="noopener noreferrer" class="bsky-date">
-              ${this.formatDate(s.indexedAt)}
+              <span class="bsky-handle">@${this.escapeHtml(s.author.handle)}</span>
             </a>
           </div>
         </div>
         <div class="bsky-body"><p>${this.renderRichText(s.record)}</p></div>
         <div class="bsky-actions">
-          <span class="bsky-like"><span class="bsky-icon bsky-icon-like">${this._iconLike}</span>${s.likeCount ?? 0}</span>
-          <span class="bsky-reply"><span class="bsky-icon bsky-icon-reply">${this._iconReply}</span>${s.replyCount ?? 0}</span>
+          <span class="bsky-reply" aria-label="${this.countLabel(s.replyCount, "reply", "replies")}"><span class="bsky-icon" aria-hidden="true">${this._iconReply}</span>${s.replyCount ?? 0}</span>
+          <span class="bsky-repost" aria-label="${this.countLabel(s.repostCount, "repost")}"><span class="bsky-icon" aria-hidden="true">${this._iconRepost}</span>${s.repostCount ?? 0}</span>
+          <span class="bsky-like" aria-label="${this.countLabel(s.likeCount, "like")}"><span class="bsky-icon" aria-hidden="true">${this._iconLike}</span>${s.likeCount ?? 0}</span>
+          <a href="${i}" target="_blank" rel="noopener noreferrer" class="bsky-comment-reply" aria-label="Reply to ${this.escapeHtml(s.author.displayName || s.author.handle)} on Bluesky">↩</a>
         </div>
         ${n}
       </div>
@@ -147,11 +151,12 @@ class v extends HTMLElement {
   }
   render() {
     if (this._loading) {
-      this.innerHTML = '<div class="bsky-loading">Loading comments...</div>';
+      if (!this.innerHTML.trim()) this.innerHTML = '<div class="bsky-loading">Loading comments...</div>';
       return;
     }
     if (this._error) {
-      this.innerHTML = `<div class="bsky-error">Error: ${this.escapeHtml(this._error)}</div>`;
+      const e = this.postUrl();
+      this.innerHTML = `<div class="bsky-error"><h2>Comments</h2><p>Comments could not be loaded.${e ? ` <a href="${e}" target="_blank" rel="noopener noreferrer">View and reply on Bluesky</a>.` : ""}</p></div>`;
       return;
     }
     if (!this._uri && !this._post) {
@@ -159,9 +164,11 @@ class v extends HTMLElement {
       return;
     }
     if (!this._data) {
+      const e = this.postUrl();
       this.innerHTML = `
         <div class="bsky-empty">
-          <p class="bsky-empty-text">No discussion found for this post.</p>
+          <h2>Comments</h2>
+          <p class="bsky-empty-text">No discussion was found.${e ? ` <a href="${e}" target="_blank" rel="noopener noreferrer">View the post on Bluesky</a>.` : ""}</p>
         </div>
       `;
       return;
@@ -169,17 +176,24 @@ class v extends HTMLElement {
     const e = `https://bsky.app/profile/${encodeURIComponent(this._data.post.author.handle)}/post/${encodeURIComponent(this._data.post.uri.split("/").pop() || "")}`, t = (this._data.replies ? this.sortReplies(this._data.replies) : []).map((r) => this.renderComment(r)).join("") || "";
     this.innerHTML = `
       <div class="bsky-container">
-        <div class="bsky-header">
-            <span class="bsky-header-text">
-                Discussion found on <a href="${e}" target="_blank" rel="noopener noreferrer">Bluesky</a>
-            </span>
-            <a href="${e}" target="_blank" rel="noopener noreferrer" class="bsky-reply-btn">
-                Reply to join discussion
-            </a>
+        <div class="bsky-summary" aria-label="Bluesky post activity">
+          <a href="${e}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">${this._iconLike}</span> ${this.countLabel(this._data.post.likeCount, "like")}</a>
+          <a href="${e}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">${this._iconRepost}</span> ${this.countLabel(this._data.post.repostCount, "repost")}</a>
+          <a href="${e}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">${this._iconReply}</span> ${this.countLabel(this._data.post.replyCount, "reply", "replies")}</a>
         </div>
-        ${t || '<div class="bsky-no-replies">No replies yet. Be the first to comment!</div>'}
+        <h2>Comments</h2>
+        <p>Join the conversation by <a href="${e}" target="_blank" rel="noopener noreferrer">replying on Bluesky</a>.</p>
+        <div class="bsky-thread">
+          ${t || '<p class="bsky-no-replies">No comments yet. Be the first to reply on Bluesky.</p>'}
+        </div>
       </div>
     `;
+  }
+  postUrl() {
+    if (this._post) return this.escapeHtml(this._post);
+    if (!this._uri) return "";
+    const e = this._uri.match(/^at:\/\/([^/]+)\/app\.bsky\.feed\.post\/([^/]+)$/);
+    return e ? `https://bsky.app/profile/${encodeURIComponent(e[1])}/post/${encodeURIComponent(e[2])}` : "";
   }
 }
 customElements.get("bsky-comments") || customElements.define("bsky-comments", v);

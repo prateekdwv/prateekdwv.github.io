@@ -1,15 +1,22 @@
 {% assign bluesky_post_id = page.bluesky_post | split: "/" | last %}
 {% capture bluesky_uri %}at://{{ site.bluesky_did }}/app.bsky.feed.post/{{ bluesky_post_id }}{% endcapture %}
-<section aria-labelledby="discussion-heading">
-  <h2 id="discussion-heading">Discussion</h2>
-  <p>
-    <a href="{{ page.bluesky_post | escape }}" target="_blank" rel="noopener noreferrer">Reply on Bluesky to join the discussion.</a>
-  </p>
+
+<section aria-label="Comments">
   <bsky-comments uri="{{ bluesky_uri | strip | escape }}" sort="asc">
-    <p>Loading discussion from Bluesky&hellip;</p>
+    <div class="bsky-summary" aria-live="polite">Loading Bluesky activity&hellip;</div>
+    <h2>Comments</h2>
+    <p>
+      Join the conversation by
+      <a href="{{ page.bluesky_post | escape }}" target="_blank" rel="noopener noreferrer">replying on Bluesky</a>.
+    </p>
+    <div class="bsky-thread" aria-live="polite">Loading comments&hellip;</div>
   </bsky-comments>
   <noscript>
-    <p>JavaScript is required to display the discussion on this page.</p>
+    <h2>Comments</h2>
+    <p>
+      JavaScript is required to display comments. You can
+      <a href="{{ page.bluesky_post | escape }}" target="_blank" rel="noopener noreferrer">view and reply to the discussion on Bluesky</a>.
+    </p>
   </noscript>
 </section>
 
