@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.10"
-gem "kramdown-parser-gfm", "~> 1.1"
-gem "webrick", "~> 1.7"
+ruby "4.0.6"
+
+gem "jekyll", "~> 4.4.1"
+gem "logger", "~> 1.7"
+gem "erb", "~> 6.0"
