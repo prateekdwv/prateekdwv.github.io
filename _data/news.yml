@@ -1,0 +1,15 @@
+# Dates use YYYY-MM-DD; event entries use the event start date for sorting.
+# Text supports Markdown. The homepage shows the three most recent entries.
+- date: 2026-09-01
+  text: >-
+    I joined Saarland University as a DAAD PRIME Fellow on 1 September.
+
+- date: 2026-06-08
+  text: >-
+    I presented a poster at [HALG 2026](https://2026.highlightsofalgorithms.org/){:target="_blank" rel="noopener noreferrer"}
+    in Stockholm.
+
+- date: 2026-06-02
+  text: >-
+    I co-organised [WACT 2026](https://sites.google.com/view/wact2026/){:target="_blank" rel="noopener noreferrer"},
+    the 9th Workshop on Algebraic Complexity Theory, in Copenhagen.

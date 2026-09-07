@@ -1,16 +1,27 @@
 <section class="grid box-border h-full w-full items-stretch md:grid-cols-[minmax(0,3fr)_minmax(18rem,2fr)] lg:grid-cols-[minmax(0,11fr)_minmax(18rem,9fr)]" aria-labelledby="home-heading">
   <div class="flex items-center px-6 py-12 md:px-6 lg:py-10 lg:pl-[max(2.5rem,calc((100vw-90rem)/2+2.5rem))] lg:pr-6">
     <div class="max-w-3xl">
-      <h1 id="home-heading" class="m-0 text-4xl font-semibold leading-tight tracking-tight text-black sm:text-5xl md:whitespace-nowrap md:text-[1.75rem] lg:text-4xl">
-        Computer Science Theoretician
+      <h1 id="home-heading" class="m-0 text-4xl font-normal leading-tight tracking-tight text-black sm:text-5xl md:whitespace-nowrap md:text-[1.75rem] lg:text-4xl">
+        {{ page.subtitle | escape }}
       </h1>
-      <p class="mt-7 max-w-2xl text-lg leading-8 text-black/70">
-        I am a <a href="https://www.daad.de/en/studying-in-germany/scholarships/daad-funding-programmes/prime/" target="_blank" rel="noopener noreferrer" class="font-medium text-black underline decoration-1 underline-offset-4">DAAD PRIME fellow</a> at Saarland University, working with <a href="https://cc.cs.uni-saarland.de/mblaeser/" target="_blank" rel="noopener noreferrer" class="font-medium text-black underline decoration-1 underline-offset-4">Prof. Markus Bläser</a>, and at Université Savoie Mont Blanc, working with <a href="https://tavenas.pages.math.cnrs.fr/home.html" target="_blank" rel="noopener noreferrer" class="font-medium text-black underline decoration-1 underline-offset-4">Sébastien Tavenas</a>. Previously, I was a postdoctoral researcher at the IT University of Copenhagen and a PhD student at IIT Kanpur.
+      <p class="mt-7 max-w-lg text-lg leading-8 text-black/70">
+        {{ page.hero_intro | markdownify | remove: '<p>' | remove: '</p>' | strip }} <a href="#about" class="whitespace-nowrap font-medium text-black hover:text-black/60">Read more <span aria-hidden="true">↓</span></a>
       </p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
+        <a href="https://scholar.google.com/citations?user=TXg6K04AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        <span aria-hidden="true" class="text-black/30">·</span>
+        <a href="https://orcid.org/0000-0002-0572-3721" target="_blank" rel="noopener noreferrer">ORCID</a>
+        <span aria-hidden="true" class="text-black/30">·</span>
+        {% if site.data.footer.email != empty %}
+          <a href="#contact">Email</a>
+        {% else %}
+          <span class="text-black/50">Email</span>
+        {% endif %}
+      </div>
     </div>
   </div>
 
-  <figure class="relative isolate m-0 aspect-[4/5] overflow-hidden border-t border-black/15 bg-white md:aspect-auto md:border-t-0">
+  <figure class="home-portrait relative isolate m-0 aspect-[4/5] overflow-hidden bg-white md:aspect-auto">
     <img src="{{ '/img/ProfilePhoto.jpeg' | relative_url }}" alt="Portrait of Prateek Dwivedi" width="3265" height="3265" loading="eager" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
   </figure>
 </section>

@@ -3,10 +3,17 @@ layout: home
 title: Prateek Dwivedi
 subtitle: Computer Science Theoretician
 show_subscription: true
+# Short hero introduction; Markdown links are supported.
+hero_intro: >-
+  I am a [DAAD PRIME Fellow](https://www.daad.de/en/studying-in-germany/scholarships/daad-funding-programmes/prime/){:target="_blank" rel="noopener noreferrer"}
+  at Universität des Saarlandes, Germany. My research explores computational
+  complexity through algebra.
 ---
 
-My research interest lies in the area of Theoretical Computer Science. Specifically, I work in the domain of Algebraic Complexity Theory. At times I also like to spend time to study areas like Graph Theory, Algorithms, Computational Number Theory and Group Testing Problems.
+I work in theoretical computer science, mainly in algebraic complexity theory. I am interested in understanding what makes computational problems hard, especially when algebra is involved. My interests also extend to graph theory, algorithms, computational number theory, and group testing.
 
-I am an avid reader and a bibliophile. Usually, I don't have a preference over the genre, but I do like to read well-researched fiction, biographies and self-help books. Outside Academia, I prefer to spend time with people discussing books, unless of course, I'm [reading a book](/reading/). Occasionally I blog post [here](/blog/) on things of general interest to me, that deserves a more permanent form than a social media post.
+I am currently a DAAD PRIME Fellow, working with [Prof. Markus Bläser](https://cc.cs.uni-saarland.de/mblaeser/){:target="_blank" rel="noopener noreferrer"} at Saarland University and [Dr. Sébastien Tavenas](https://tavenas.pages.math.cnrs.fr/home.html){:target="_blank" rel="noopener noreferrer"} at Université Savoie Mont Blanc. Before this, I was a postdoctoral researcher at the IT University of Copenhagen and BARC, working with Prof. Nutan Limaye. I completed my PhD at IIT Kanpur under the supervision of Prof. Nitin Saxena.
 
-You can find my contact details below in the footer. Feel free to connect with me for anything that you think needs my attention. By any chance, you are feeling hesitant to approach me wondering if that's appropriate; don't. I would appreciate getting in touch with you.
+Outside research, I spend a lot of time reading. I do not stick to one genre, but I particularly enjoy historical fiction, biographies, and fantacy books. I also enjoy talking about books, often just as much as reading them.
+
+If you would like to talk about research, books, or something else we might have in common, feel free to get in touch.

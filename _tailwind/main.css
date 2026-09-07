@@ -7,3 +7,61 @@
 @source "../_layouts";
 @source "../*.html";
 @source "../blog/*.html";
+
+@layer base {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  main a,
+  .site-footer a {
+    color: #444;
+    text-decoration: none;
+  }
+
+  main a:hover,
+  .site-footer a:hover {
+    color: #000;
+  }
+
+  main a:focus-visible,
+  .site-footer a:focus-visible,
+  .site-footer button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Anchor navigation may focus the biography; it is not an interactive control. */
+  #about:focus {
+    outline: none;
+  }
+
+  /* Keep the fade proportional to the panel, well outside the central face. */
+  @media (min-width: 48rem) {
+    .home-portrait::after {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 25%;
+      pointer-events: none;
+      background: linear-gradient(
+        to right,
+        #fff 0%,
+        rgb(255 255 255 / 97%) 10%,
+        rgb(255 255 255 / 90%) 20%,
+        rgb(255 255 255 / 78%) 30%,
+        rgb(255 255 255 / 65%) 40%,
+        rgb(255 255 255 / 50%) 50%,
+        rgb(255 255 255 / 35%) 60%,
+        rgb(255 255 255 / 22%) 70%,
+        rgb(255 255 255 / 10%) 80%,
+        rgb(255 255 255 / 3%) 90%,
+        rgb(255 255 255 / 0%) 100%
+      );
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<section aria-labelledby="news-heading" class="min-w-0">
+  <h2 id="news-heading" class="m-0 mb-7 text-2xl font-normal text-black">Latest news</h2>
+  {% assign news_items = site.data.news | sort: 'date' | reverse %}
+  {% if news_items.size > 0 %}
+    <ul class="m-0 list-none space-y-7 p-0">
+      {% for item in news_items limit:3 %}
+        <li>
+          <time datetime="{{ item.date | date: '%Y-%m-%d' }}" class="text-sm text-black/60">{{ item.date | date: '%b %Y' }}</time>
+          <div class="mt-2 text-base leading-7 text-black/70 [&>p]:m-0">
+            {{ item.text | markdownify }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="m-0 text-base leading-7 text-black/60">No announcements yet.</p>
+  {% endif %}
+</section>
