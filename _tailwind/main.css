@@ -9,6 +9,22 @@
 @source "../blog/*.html";
 
 @layer base {
+  :root {
+    --site-header-height: 6rem;
+  }
+
+  @media (min-width: 48rem) {
+    :root {
+      --site-header-height: 7rem;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    :root {
+      --site-header-height: 9rem;
+    }
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;

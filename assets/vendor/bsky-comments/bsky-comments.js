@@ -52,7 +52,7 @@ class v extends HTMLElement {
           this._depth = Math.max(1, parseInt(t, 10) || 10);
           break;
       }
-      this._connected && (["post", "uri", "service"].includes(e) ? (this._post || this._uri) && this.init() : this.render());
+      this._connected && (["post", "uri", "service", "depth"].includes(e) ? (this._post || this._uri) && this.init() : this.render());
     }
   }
   connectedCallback() {
@@ -99,6 +99,14 @@ class v extends HTMLElement {
   escapeHtml(e) {
     return e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
   }
+  isWebUrl(value) {
+    try {
+      const url = new URL(value);
+      return url.protocol === "https:" || url.protocol === "http:";
+    } catch {
+      return false;
+    }
+  }
   renderRichText(e) {
     const { text: s, facets: t } = e;
     if (!t || t.length === 0) return this.escapeHtml(s);
@@ -109,7 +117,7 @@ class v extends HTMLElement {
       if (h < f || k > n.length) continue;
       c += this.escapeHtml(i.decode(n.slice(f, h)));
       const b = this.escapeHtml(i.decode(n.slice(h, k))), a = y.features[0];
-      a ? a.$type === "app.bsky.richtext.facet#link" && a.uri ? c += `<a href="${this.escapeHtml(a.uri)}" target="_blank" rel="noopener noreferrer">${b}</a>` : a.$type === "app.bsky.richtext.facet#mention" && a.did ? c += `<a href="https://bsky.app/profile/${encodeURIComponent(a.did)}" target="_blank" rel="noopener noreferrer">${b}</a>` : a.$type === "app.bsky.richtext.facet#tag" && a.tag ? c += `<a href="https://bsky.app/hashtag/${encodeURIComponent(a.tag)}" target="_blank" rel="noopener noreferrer">${b}</a>` : c += b : c += b, f = k;
+      a ? a.$type === "app.bsky.richtext.facet#link" && this.isWebUrl(a.uri) ? c += `<a href="${this.escapeHtml(a.uri)}" target="_blank" rel="noopener noreferrer">${b}</a>` : a.$type === "app.bsky.richtext.facet#mention" && a.did ? c += `<a href="https://bsky.app/profile/${encodeURIComponent(a.did)}" target="_blank" rel="noopener noreferrer">${b}</a>` : a.$type === "app.bsky.richtext.facet#tag" && a.tag ? c += `<a href="https://bsky.app/hashtag/${encodeURIComponent(a.tag)}" target="_blank" rel="noopener noreferrer">${b}</a>` : c += b : c += b, f = k;
     }
     return c += this.escapeHtml(i.decode(n.slice(f))), c;
   }
@@ -118,7 +126,7 @@ class v extends HTMLElement {
     return `${r} ${r === 1 ? s : t}`;
   }
   sortReplies(e) {
-    return [...e].sort((s, t) => {
+    return e.filter((reply) => reply.post).sort((s, t) => {
       const r = new Date(s.post.indexedAt).getTime(), i = new Date(t.post.indexedAt).getTime();
       return this._sortOrder === "asc" ? r - i : i - r;
     });

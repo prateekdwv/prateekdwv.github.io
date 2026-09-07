@@ -4,15 +4,16 @@
       <h1 id="home-heading" class="m-0 text-4xl font-normal leading-tight tracking-tight text-black sm:text-5xl md:whitespace-nowrap md:text-[1.75rem] lg:text-4xl">
         {{ page.subtitle | escape }}
       </h1>
-      <p class="mt-7 max-w-lg text-lg leading-8 text-black/70">
-        {{ page.hero_intro | markdownify | remove: '<p>' | remove: '</p>' | strip }} <a href="#about" class="whitespace-nowrap font-medium text-black hover:text-black/60">Read more <span aria-hidden="true">↓</span></a>
-      </p>
+      {% capture hero_intro %}{{ page.hero_intro }} <a href="#about" class="whitespace-nowrap font-medium text-black hover:text-black/60">Read more <span aria-hidden="true">↓</span></a>{% endcapture %}
+      <div class="mt-7 mb-[1em] max-w-lg text-lg leading-8 text-black/70 [&>p:first-child]:mt-0 [&>p:last-child]:mb-0">
+        {{ hero_intro | markdownify }}
+      </div>
       <div class="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
         <a href="https://scholar.google.com/citations?user=TXg6K04AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
         <span aria-hidden="true" class="text-black/30">·</span>
         <a href="https://orcid.org/0000-0002-0572-3721" target="_blank" rel="noopener noreferrer">ORCID</a>
         <span aria-hidden="true" class="text-black/30">·</span>
-        {% if site.data.footer.email != empty %}
+        {% if site.data.footer.email and site.data.footer.email != empty %}
           <a href="#contact">Email</a>
         {% else %}
           <span class="text-black/50">Email</span>

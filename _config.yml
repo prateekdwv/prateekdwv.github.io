@@ -20,6 +20,7 @@ defaults:
       layout: default
 
 exclude:
+  - DEVELOPMENT.md
   - Gemfile
   - Gemfile.lock
   - package.json

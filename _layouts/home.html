@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="md:grid md:min-h-[calc(100svh-7rem)] md:grid-rows-[minmax(0,1fr)_auto] lg:min-h-[calc(100svh-9rem)]">
+<div class="md:grid md:min-h-[calc(100svh-var(--site-header-height))] {% if page.show_subscription %}md:grid-rows-[minmax(0,1fr)_auto]{% else %}md:grid-rows-1{% endif %}">
   {% include home-hero.html %}
   {% if page.show_subscription %}
     {% include subscription-banner.html %}
