@@ -62,6 +62,20 @@
 }
 
 @layer components {
+  .site-footer [data-copy-email] {
+    box-sizing: border-box;
+    width: 1.625rem;
+    height: 1.5rem;
+    padding: 0;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-footer [data-copy-email]:not([hidden]) {
+    display: inline-flex;
+  }
+
   /* Shared reading typography for pages and posts outside the homepage hero. */
   .site-page {
     color: var(--color-muted);
