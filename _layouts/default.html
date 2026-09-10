@@ -18,10 +18,14 @@
     {% include site-header.html %}
     <main id="main-content"{% unless page.layout == "home" %} class="site-page mx-auto box-border w-full max-w-4xl px-6 py-14 md:px-10"{% endunless %}>
       {% unless page.layout == "home" %}
+        {% if page.hide_page_heading %}
+          <h1 class="sr-only">{{ page.title | default: site.title }}</h1>
+        {% else %}
         <header class="mb-10">
           <h1 class="m-0 text-4xl font-normal leading-tight tracking-tight text-black">{{ page.title | default: site.title }}</h1>
           {% if page.subtitle %}<p class="mt-4 mb-0 text-muted">{{ page.subtitle }}</p>{% endif %}
         </header>
+        {% endif %}
       {% endunless %}
       {{ content }}
     </main>

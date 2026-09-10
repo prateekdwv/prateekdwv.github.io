@@ -1,0 +1,44 @@
+{% assign publication_years = site.data.publications | sort: "year" | reverse %}
+<div class="publications">
+  {% for year_group in publication_years %}
+    <section class="publication-year" aria-labelledby="publications-{{ year_group.year }}">
+      <h2 id="publications-{{ year_group.year }}">{{ year_group.year }}</h2>
+      <ul class="publication-list">
+        {% for publication in year_group.publications %}
+          <li class="publication-entry">
+            <article aria-labelledby="paper-{{ year_group.year }}-{{ forloop.index }}">
+              <h3 id="paper-{{ year_group.year }}-{{ forloop.index }}">{{ publication.title | escape }}</h3>
+              {% if publication.coauthors.size > 0 %}
+                <p class="publication-authors">with {% for coauthor in publication.coauthors %}{% if forloop.first %}{{ coauthor | escape }}{% elsif forloop.last %}{% if forloop.length == 2 %} and {% else %}, and {% endif %}{{ coauthor | escape }}{% else %}, {{ coauthor | escape }}{% endif %}{% endfor %}</p>
+              {% endif %}
+              {% if publication.venue %}
+                <p class="publication-type"><strong>{{ publication.venue | escape }}</strong> <span aria-hidden="true">·</span> {{ publication.venue_name | escape }}</p>
+              {% elsif publication.kind %}
+                <p class="publication-type">{{ publication.kind | escape }}</p>
+              {% endif %}
+              {% if publication.journal %}
+                <p class="publication-type"><strong>{{ publication.journal.acronym | escape }}{% if publication.journal.year %} {{ publication.journal.year }}{% endif %}</strong> <span aria-hidden="true">·</span> {{ publication.journal.name | escape }}{% if publication.journal.status %} <span aria-hidden="true">·</span> {{ publication.journal.status | escape }}{% endif %}</p>
+              {% endif %}
+              <div class="publication-details">
+                {% for detail in publication.details %}
+                  {{ detail | markdownify }}
+                {% endfor %}
+              </div>
+              {% if publication.links.size > 0 %}
+                <div class="publication-links">
+                  {% for link in publication.links %}
+                    {% assign destination = link.url %}
+                    {% assign first_character = destination | slice: 0, 1 %}
+                    {% if first_character == '/' %}{% assign destination = destination | relative_url %}{% endif %}
+                    {% assign label = link.label | replace: 'Full Version', 'Full version' %}
+                    <a href="{{ destination | escape }}" aria-label="{{ label | escape }}: {{ publication.title | escape }}">{{ label | escape }} <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M4 4h8v8"/></svg></a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </article>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</div>

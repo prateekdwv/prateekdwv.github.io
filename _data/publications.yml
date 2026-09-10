@@ -1,6 +1,7 @@
 - year: 2026
   publications:
     - title: "Tight lower bounds for algebraic communication and applications"
+      kind: Manuscript
       coauthors:
         - "Manon Blanc"
         - "Magnus Rahbek Dalgaard Hansen"
@@ -11,11 +12,11 @@
       links: []
 
     - title: "Lower Bounds in Algebraic Complexity via Symmetry and Homomorphism Polynomials"
+      venue: STOC 2026
+      venue_name: Symposium on Theory of Computing
       coauthors:
         - "Benedikt Pago"
         - "Tim Seppelt"
-      details:
-        - "58th Annual ACM Symposium on Theory of Computing (STOC), 2026"
       links:
         - label: "Paper"
           url: "/papers/symACT-confversion.pdf"
@@ -25,6 +26,8 @@
 - year: 2025
   publications:
     - title: "On Closure Properties of Read-Once Oblivious Algebraic Branching Programs"
+      venue: ITCS 2025
+      venue_name: Innovations in Theoretical Computer Science
       coauthors:
         - "Robert Andrews"
         - "Jules Armand"
@@ -33,13 +36,15 @@
         - "Srikanth Srinivasan"
         - "Sébastien Tavenas"
       details:
-        - "17th Innovations in Theoretical Computer Science (ITCS), 2025"
         - "Highlights of Algorithms (HALG), 2026"
       links:
         - label: "Paper"
-          url: "https://www.prateekdwivedi.in/papers/ro-nonclosure-confversion.pdf"
+          url: "/papers/ro-nonclosure-confversion.pdf"
+        - label: "Poster"
+          url: "/slides/2026-RO-factoring-poster.pdf"
 
     - title: "A primer on the closure of algebraic complexity classes under factoring"
+      kind: Survey
       coauthors:
         - "C. S. Bhargav"
         - "Nitin Saxena"
@@ -50,22 +55,23 @@
           url: "https://arxiv.org/abs/2506.19604"
 
     - title: "Monotone Bounded-Depth Complexity of Homomorphism Polynomials"
+      venue: MFCS 2025
+      venue_name: Mathematical Foundations of Computer Science
       coauthors:
         - "C. S. Bhargav"
         - "Shiteng Chen"
         - "Radu Curticapean"
-      details:
-        - "50th International Symposium on Mathematical Foundations of Computer Science (MFCS), 2025"
       links:
         - label: "Paper"
           url: "/papers/monotone-constdp-hompoly.pdf"
         - label: "Slides"
-          url: "slides/2024-arco.pdf"
+          url: "/slides/2024-arco.pdf"
 
     - title: "Treading the Borders for Explicitness, Circuit Factoring, and Identity Testing"
+      kind: PhD thesis
       coauthors: []
       details:
-        - "PhD Thesis, CSE IIT Kanpur, 2025"
+        - "CSE, IIT Kanpur, 2025"
       links:
         - label: "Thesis"
           url: "/papers/thesis.pdf"
@@ -75,11 +81,11 @@
 - year: 2024
   publications:
     - title: "Learning the coefficients: A presentable version of border complexity and applications to circuit factoring"
+      venue: STOC 2024
+      venue_name: Symposium on Theory of Computing
       coauthors:
         - "C. S. Bhargav"
         - "Nitin Saxena"
-      details:
-        - "56th Annual ACM Symposium on Theory of Computing (STOC), 2024"
       links:
         - label: "Paper"
           url: "/papers/PresentableVNP-confversion.pdf"
@@ -87,12 +93,15 @@
           url: "https://youtu.be/V1XWkX_ZSZQ"
 
     - title: "Lower Bounds for the Sum of Small-Size Algebraic Branching Programs"
+      venue: TAMC 2024
+      venue_name: Theory and Applications of Models of Computation
       coauthors:
         - "C. S. Bhargav"
         - "Nitin Saxena"
-      details:
-        - "19th Annual Conference of Theory and Applications of Models of Computation (TAMC), 2024"
-        - "Invited in the special issue of Theoretical Computer Science(Theor. Comput. Sci.)"
+      journal:
+        acronym: TCS
+        name: Theoretical Computer Science
+        status: Invited to the special issue
       links:
         - label: "Paper"
           url: "/papers/smABP-lowerbounds-confversion.pdf"
@@ -102,12 +111,15 @@
 - year: 2021
   publications:
     - title: "Demystifying the border of depth-3 algebraic circuits"
+      venue: FOCS 2021
+      venue_name: Foundations of Computer Science
       coauthors:
         - "Pranjal Dutta"
         - "Nitin Saxena"
-      details:
-        - "62nd Annual Symposium on Foundations of Computer Science (FOCS), 2021"
-        - "Invited in the special issue of SIAM Journal on Computing (SICOMP)"
+      journal:
+        acronym: SICOMP
+        name: SIAM Journal on Computing
+        status: Invited to the special issue
       links:
         - label: "Paper"
           url: "/papers/border-depth3-confversion.pdf"
@@ -117,12 +129,16 @@
           url: "https://youtu.be/z8cVPKhmrLU"
 
     - title: "Deterministic identity testing paradigms for bounded top-fanin depth-4 circuits"
+      venue: CCC 2021
+      venue_name: Computational Complexity Conference
       coauthors:
         - "Pranjal Dutta"
         - "Nitin Saxena"
-      details:
-        - "36th Computational Complexity Conference (CCC), 2021"
-        - "To appear in Theory of Computing (ToC), 2026"
+      journal:
+        acronym: ToC
+        name: Theory of Computing
+        year: 2026
+        status: To appear
       links:
         - label: "Paper"
           url: "/papers/pit-depth4-didi.pdf"

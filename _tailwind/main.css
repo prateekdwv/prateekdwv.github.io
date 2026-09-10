@@ -133,6 +133,70 @@
     text-decoration-color: var(--color-name);
   }
 
+  .publication-year + .publication-year {
+    margin-top: 3.5rem;
+  }
+
+  .publication-year h2 {
+    margin: 0 0 1.5rem;
+    color: var(--color-name);
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+
+  .publication-year .publication-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .publication-list .publication-entry + .publication-entry {
+    margin-top: 2rem;
+  }
+
+  .publication-entry h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: 600;
+    text-wrap: pretty;
+  }
+
+  .publication-entry p {
+    margin: 0;
+  }
+
+  .publication-authors,
+  .publication-details {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .publication-entry .publication-type {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .publication-type strong {
+    font-weight: 600;
+  }
+
+  .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .publication-links a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.375rem;
+    padding-block: 0.125rem;
+  }
+
   .home-hero-paper {
     background: linear-gradient(rgb(255 255 255 / 55%), rgb(255 255 255 / 55%)),
       #f6f1e9 url("../../img/hero-crumpled-paper.webp") center / cover no-repeat;
