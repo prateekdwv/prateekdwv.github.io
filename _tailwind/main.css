@@ -8,6 +8,14 @@
 @source "../*.html";
 @source "../blog/*.html";
 
+@theme {
+  --color-black: #202020;
+  --color-white: #ffffff;
+  --color-accent: #202020;
+  --color-name: #C8553D;
+  --color-muted: #606060;
+}
+
 @layer base {
   :root {
     --site-header-height: 6rem;
@@ -31,15 +39,16 @@
     }
   }
 
-  main a,
-  .site-footer a {
-    color: #444;
+  main a[href],
+  .site-footer a[href] {
+    color: var(--color-black);
+    font-weight: 500;
     text-decoration: none;
   }
 
-  main a:hover,
-  .site-footer a:hover {
-    color: #000;
+  main a[href]:hover,
+  .site-footer a[href]:hover {
+    color: var(--color-black);
   }
 
   main a:focus-visible,
@@ -51,33 +60,37 @@
 }
 
 @layer components {
+  nav[aria-label="Primary navigation"] a {
+    text-decoration-color: var(--color-name);
+  }
+
+  .home-hero-paper {
+    background: linear-gradient(rgb(255 255 255 / 55%), rgb(255 255 255 / 55%)),
+      #f6f1e9 url("../../img/hero-crumpled-paper.webp") center / cover no-repeat;
+  }
+
+  .home-portrait-print {
+    margin: 0;
+    border-left: 1rem solid var(--color-white);
+    background: var(--color-white);
+  }
+
   /* Anchor navigation may focus the biography; it is not an interactive control. */
   #about:focus {
     outline: none;
   }
 
-  /* Keep the fade proportional to the panel, well outside the central face. */
   @media (min-width: 48rem) {
-    .home-portrait::after {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 25%;
-      pointer-events: none;
-      background: linear-gradient(
-        to right,
-        #fff 0%,
-        rgb(255 255 255 / 97%) 10%,
-        rgb(255 255 255 / 90%) 20%,
-        rgb(255 255 255 / 78%) 30%,
-        rgb(255 255 255 / 65%) 40%,
-        rgb(255 255 255 / 50%) 50%,
-        rgb(255 255 255 / 35%) 60%,
-        rgb(255 255 255 / 22%) 70%,
-        rgb(255 255 255 / 10%) 80%,
-        rgb(255 255 255 / 3%) 90%,
-        rgb(255 255 255 / 0%) 100%
-      );
+    .home-portrait-print {
+      min-height: 24rem;
     }
+  }
+
+}
+
+@layer utilities {
+  .text-black\/60,
+  .text-black\/70 {
+    color: var(--color-muted);
   }
 }

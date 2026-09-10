@@ -1,16 +1,19 @@
 (() => {
-  const button = document.getElementById('copy-email');
-  const email = document.getElementById('footer-email');
-  const status = document.getElementById('copy-email-status');
-  if (!button || !email || !status || !navigator.clipboard?.writeText) return;
+  if (!navigator.clipboard?.writeText) return;
 
-  button.hidden = false;
-  button.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(email.textContent.trim());
-      status.textContent = 'Email address copied.';
-    } catch {
-      status.textContent = 'Please select and copy the email address above.';
-    }
+  document.querySelectorAll('[data-copy-email]').forEach((button) => {
+    const email = document.getElementById(button.dataset.copyEmail);
+    const status = document.getElementById(button.dataset.copyStatus);
+    if (!email || !status) return;
+
+    button.hidden = false;
+    button.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(email.textContent.trim());
+        status.textContent = 'Email address copied.';
+      } catch {
+        status.textContent = 'Please select and copy the email address above.';
+      }
+    });
   });
 })();

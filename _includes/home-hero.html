@@ -1,10 +1,10 @@
-<section class="grid box-border h-full w-full items-stretch md:grid-cols-[minmax(0,3fr)_minmax(18rem,2fr)] lg:grid-cols-[minmax(0,11fr)_minmax(18rem,9fr)]" aria-labelledby="home-heading">
-  <div class="flex items-center px-6 py-12 md:px-6 lg:py-10 lg:pl-[max(2.5rem,calc((100vw-90rem)/2+2.5rem))] lg:pr-6">
+<section class="home-hero-paper grid box-border h-full w-full items-stretch md:grid-cols-[minmax(0,3fr)_minmax(18rem,2fr)] lg:grid-cols-[minmax(0,11fr)_minmax(18rem,9fr)]" aria-labelledby="home-heading">
+  <div class="flex items-center px-6 py-12 md:pl-10 md:pr-6 lg:py-10 lg:pl-[max(4.5rem,calc((100vw-90rem)/2+4.5rem))] lg:pr-6">
     <div class="max-w-3xl">
       <h1 id="home-heading" class="m-0 text-4xl font-normal leading-tight tracking-tight text-black sm:text-5xl md:whitespace-nowrap md:text-[1.75rem] lg:text-4xl">
         {{ page.subtitle | escape }}
       </h1>
-      {% capture hero_intro %}{{ page.hero_intro }} <a href="#about" class="whitespace-nowrap font-medium text-black hover:text-black/60">Read more <span aria-hidden="true">↓</span></a>{% endcapture %}
+      {% capture hero_intro %}{{ page.hero_intro }} <a href="#about" class="whitespace-nowrap font-medium">Read more <span aria-hidden="true">↓</span></a>{% endcapture %}
       <div class="mt-7 mb-[1em] max-w-lg text-lg leading-8 text-black/70 [&>p:first-child]:mt-0 [&>p:last-child]:mb-0">
         {{ hero_intro | markdownify }}
       </div>
@@ -22,7 +22,12 @@
     </div>
   </div>
 
-  <figure class="home-portrait relative isolate m-0 aspect-[4/5] overflow-hidden bg-white md:aspect-auto">
-    <img src="{{ '/img/ProfilePhoto.jpeg' | relative_url }}" alt="Portrait of Prateek Dwivedi" width="3265" height="3265" loading="eager" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
+  <figure class="home-portrait-print relative aspect-[4/5] md:aspect-auto">
+    <picture>
+      <source type="image/webp"
+        srcset="{{ '/img/ProfilePhoto-640.webp' | relative_url }} 640w, {{ '/img/ProfilePhoto-1280.webp' | relative_url }} 1280w, {{ '/img/ProfilePhoto-1920.webp' | relative_url }} 1920w"
+        sizes="(min-width: 64rem) calc(45vw - 1rem), (min-width: 48rem) calc(40vw - 1rem), calc(100vw - 1rem)">
+      <img src="{{ '/img/ProfilePhoto.jpeg' | relative_url }}" alt="Portrait of Prateek Dwivedi" width="3265" height="3265" loading="eager" fetchpriority="high" decoding="async" class="absolute inset-0 h-full w-full object-cover object-center">
+    </picture>
   </figure>
 </section>
