@@ -1,0 +1,57 @@
+% year: 2024
+% Reconstructed from the supplied reference. Coordinates follow its 663 x 673 canvas.
+\begin{tikzpicture}[
+  x=0.02cm, y=-0.02cm,
+  every node/.style={inner sep=0pt, text=black!88}
+]
+  \definecolor{vnpbackground}{HTML}{F8B5AB}
+  \definecolor{closurebackground}{HTML}{DA716E}
+  \definecolor{closureoverlap}{HTML}{D65D59}
+  \definecolor{middleregion}{HTML}{EB4D48}
+  \definecolor{vpbackground}{HTML}{EF7474}
+  % Preblended shadow colours avoid PDF transparency lost during SVG conversion.
+  \newcommand{\regionshadow}[5]{%
+    \foreach \spread in {12,11,...,1}{%
+      \pgfmathtruncatemacro{\shade}{(13-\spread)*2.5}
+      \path[fill=black!\shade!#5]
+        (#1,#2) ellipse [x radius={#3+\spread},y radius={#4+\spread}];
+    }%
+  }
+
+  % Fix the same whitespace and aspect ratio as the reference.
+  \path[use as bounding box] (0,0) rectangle (663,673);
+
+  % Broad VNP region, then the overlapping closure region.
+  \regionshadow{275}{289}{252}{245}{white}
+  \path[fill=vnpbackground, draw=black!85, line width=0.45pt]
+    (275,289) ellipse [x radius=252,y radius=245];
+  \regionshadow{443}{289}{188}{180}{white}
+  \begin{scope}
+    \clip (275,289) ellipse [x radius=252,y radius=245];
+    \regionshadow{443}{289}{188}{180}{vnpbackground}
+  \end{scope}
+  \path[fill=closurebackground]
+    (443,289) ellipse [x radius=188,y radius=180];
+  \begin{scope}
+    \clip (275,289) ellipse [x radius=252,y radius=245];
+    \path[fill=closureoverlap] (443,289) ellipse [x radius=188,y radius=180];
+  \end{scope}
+
+  % Two nested regions, with soft shadows and no outlines.
+  \regionshadow{400}{289}{113}{108}{closureoverlap}
+  \path[fill=middleregion]
+    (400,289) ellipse [x radius=113,y radius=108];
+  \regionshadow{421}{289}{69}{67}{middleregion}
+  \path[fill=vpbackground]
+    (421,289) ellipse [x radius=69,y radius=67];
+
+  \node[font=\sffamily\fontsize{21}{25}\selectfont] at (96,290) {VNP};
+  \node[font=\sffamily\fontsize{21}{25}\selectfont] at (425,290) {VP};
+  \node[font=\fontsize{21}{25}\selectfont] at (601,293) {$\overline{\VP}$};
+
+  % Vertical connector with solid endpoints.
+  \draw[black!88,line width=0.65pt] (406,371) -- (406,606);
+  \fill[black!88] (406,371) circle[radius=7];
+  \fill[black!88] (406,606) circle[radius=7];
+  \node[font=\sffamily\fontsize{19}{23}\selectfont] at (406,635) {Low Deg Factors};
+\end{tikzpicture}

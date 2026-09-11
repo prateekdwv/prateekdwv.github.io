@@ -20,6 +20,10 @@ defaults:
       layout: default
 
 exclude:
+  - scripts
+  - tests
+  - _diagrams
+  - .cache
   - DEVELOPMENT.md
   - Gemfile
   - Gemfile.lock

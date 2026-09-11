@@ -1,0 +1,16 @@
+% Shared packages, libraries, styles, and macros for every diagram.
+% Each other top-level .tex file should contain one tikzpicture environment.
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+% Standard dvips colour values (TikZ has already loaded xcolor).
+\definecolor{Plum}{cmyk}{0.50,1,0,0}
+\definecolor{CornflowerBlue}{cmyk}{0.65,0.13,0,0}
+\definecolor{SeaGreen}{cmyk}{0.69,0,0.50,0}
+\definecolor{Melon}{cmyk}{0,0.46,0.50,0}
+\newcommand{\VF}{\mathrm{VF}}
+\newcommand{\VBP}{\mathrm{VBP}}
+\newcommand{\VP}{\mathrm{VP}}
+\newcommand{\VNP}{\mathrm{VNP}}
+% Additional local dependencies belong in shared/, for example:
+% \input{shared/macros.tex}

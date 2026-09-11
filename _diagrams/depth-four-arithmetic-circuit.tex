@@ -1,0 +1,64 @@
+% year: 2021
+% Reconstruction of the supplied depth-four circuit diagram.
+% Coordinates follow the reference's 624 x 598 canvas.
+\begin{tikzpicture}[
+  x=0.02cm, y=-0.02cm,
+  every node/.style={inner sep=0pt, text=black!88},
+  wire/.style={draw=black!88, line width=0.45pt,
+    -{Stealth[length=4.5pt,width=3.5pt]}},
+  gate/.style={draw=black!88, fill=white, line width=0.45pt},
+  level/.style={text=circuitteal,font=\fontsize{14}{17}\selectfont}
+]
+  \definecolor{circuitblue}{HTML}{0080C8}
+  \definecolor{circuitteal}{HTML}{009D91}
+  \path[use as bounding box] (0,0) rectangle (624,598);
+
+  \node[text=circuitblue,font=\fontsize{16}{19}\selectfont] at (328,57)
+    {$\displaystyle \mathbb{F}[x_1,\ldots,x_n]\ni f
+      =\sum_i^k\prod_j(\text{sparse polynomial})_{ij}$};
+
+  % Wires are drawn before the gates so their ends meet the outlines cleanly.
+  \draw[wire,line width=1.5pt] (359,200) -- (359,117);
+  \draw[wire] (217,309) -- (343,246);
+  \draw[wire] (325,301) -- (359,254);
+  \draw[wire] (467,309) -- (378,247);
+
+  \foreach \left/\right in {170/228,296/353,456/512}{
+    \draw[wire] (\left,387) -- ({\left+12},346);
+    \draw[wire] (\right,387) -- ({\right-10},346);
+    \draw[wire] (\left,466) -- ({\left+12},425);
+    \draw[wire] (\right,466) -- ({\right-10},425);
+    \draw[wire] (\left,545) -- ({\left+12},504);
+    \draw[wire] (\right,545) -- ({\right-10},504);
+  }
+
+  \path[gate] (359,227) ellipse[x radius=25,y radius=27];
+  \node[text=circuitblue,font=\fontsize{18}{21}\selectfont] at (359,227) {$+$};
+  \foreach \cx in {200,324,484}{
+    \path[gate] (\cx,327) ellipse[x radius=25,y radius=27];
+    \node[text=circuitblue,font=\fontsize{18}{21}\selectfont] at (\cx,327) {$\times$};
+  }
+  \node[font=\fontsize{16}{19}\selectfont] at (404,324) {$\cdots$};
+
+  \path[gate,rounded corners=4pt] (158,387) rectangle (520,425);
+  \node[font=\fontsize{18}{21}\selectfont] at (336,406) {$+$};
+  \path[gate,rounded corners=4pt] (134,466) rectangle (539,504);
+  \node[font=\fontsize{18}{21}\selectfont] at (333,485) {$\times$};
+  \path[fill=circuitteal,rounded corners=4pt] (97,544) rectangle (575,581);
+  \node[text=white,font=\sffamily\fontsize{13}{16}\selectfont] at (336,563) {Variables};
+
+  % Alternating sum/product layers, with arrows into the circuit.
+  \node[level] at (175,232) {$\Sigma$};
+  \draw[wire] (195,232) -- (327,232);
+  \node[level] at (75,326) {$\Pi$};
+  \draw[wire] (96,328) -- (160,328);
+  \node[level] at (59,405) {$\Sigma$};
+  \draw[wire] (83,406) -- (147,406);
+  \node[level] at (35,486) {$\Pi$};
+  \draw[wire] (56,488) -- (120,488);
+
+  % Curved top-fanin annotation. The reference's spellcheck underline is omitted.
+  \draw[circuitteal,line width=0.7pt]
+    (271,242) .. controls (323,298) and (402,298) .. (457,237);
+  \node[font=\fontsize{14}{17}\selectfont,anchor=west] at (458,222) {top-fanin};
+\end{tikzpicture}

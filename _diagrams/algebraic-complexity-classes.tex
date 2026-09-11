@@ -1,0 +1,20 @@
+% year: 2025
+\begin{tikzpicture}[every node/.style={font=\small}, scale=1]
+  % Base point
+  \coordinate (O) at (0,0);
+
+  % Arcs (complexity classes)
+  \draw[thick, fill=Plum!20] (O) ++(-3,0) arc[start angle=180, end angle=0, radius=4]; % VNP
+  \draw[thick, fill=CornflowerBlue!25] (O) ++(-3,0) arc[start angle=180, end angle=0, radius=3]; % VP
+  \draw[thick, fill=SeaGreen!20] (O) ++(-3,0) arc[start angle=180, end angle=0, radius=2]; % VBP
+  \draw[thick, fill=Melon!30] (O) ++(-3,0) arc[start angle=180, end angle=0, radius=1]; % VF
+
+  % Labels placed inside arcs
+  \node at (-2,0.5) {$\VF$};
+  \node at (0,0.5) {$\VBP$};
+  \node at (2,0.5) {$\VP$};
+  \node at (4,0.5) {$\VNP$};
+
+  % Underline
+  \draw[thick] (-3,0) -- (5,0);
+\end{tikzpicture}

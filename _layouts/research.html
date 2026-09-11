@@ -1,0 +1,29 @@
+---
+layout: default
+---
+{% assign has_matching_diagrams = false %}
+{% for year_group in site.data.publications %}
+  {% assign matching_diagrams = site.data.diagrams | where: 'year', year_group.year %}
+  {% if matching_diagrams.size > 0 %}{% assign has_matching_diagrams = true %}{% break %}{% endif %}
+{% endfor %}
+{% if has_matching_diagrams %}
+  <noscript><style>.research-layout.has-diagrams { display: block; max-width: 56rem; }</style></noscript>
+{% endif %}
+<div class="research-layout{% if has_matching_diagrams %} has-diagrams{% endif %}" data-research-layout>
+  <section class="site-page research-publications" data-publication-column aria-labelledby="publications-heading">
+    <header class="mb-10">
+      <h1 id="publications-heading" class="m-0 text-4xl font-normal leading-tight tracking-tight text-black">{{ page.title | escape }}</h1>
+      {% if page.subtitle %}<p class="mt-4 mb-0 text-muted">{{ page.subtitle | escape }}</p>{% endif %}
+    </header>
+    {{ content }}
+  </section>
+  {% if has_matching_diagrams %}
+    <aside class="diagram-gallery" data-diagram-gallery aria-label="Selected research diagrams" hidden></aside>
+    <script type="application/json" data-diagram-manifest>[
+      {% for diagram in site.data.diagrams %}
+        {"id": {{ diagram.id | jsonify }}, "year": {{ diagram.year | jsonify }}, "url": {{ diagram.url | relative_url | jsonify }}, "width": {{ diagram.width | jsonify }}, "height": {{ diagram.height | jsonify }}}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]</script>
+    <script type="module" src="{{ '/assets/js/diagram-gallery.mjs' | relative_url }}"></script>
+  {% endif %}
+</div>
