@@ -209,28 +209,33 @@
     text-decoration-color: var(--color-name);
   }
 
-  .publication-year + .publication-year {
+  .publication-year + .publication-year,
+  .outreach-group + .outreach-group {
     margin-top: 3.5rem;
   }
 
-  .publication-year h2 {
+  .publication-year h2,
+  .outreach h3 {
     margin: 0 0 1.5rem;
     color: var(--color-name);
     font-size: 1.25rem;
     font-weight: 500;
   }
 
-  .publication-year .publication-list {
+  .publication-year .publication-list,
+  .outreach-list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  .publication-list .publication-entry + .publication-entry {
+  .publication-list .publication-entry + .publication-entry,
+  .outreach-list > li + li {
     margin-top: 2rem;
   }
 
-  .publication-entry h3 {
+  .publication-entry h3,
+  .outreach h4 {
     margin: 0 0 0.5rem;
     font-size: 1.125rem;
     line-height: 1.5;
@@ -238,12 +243,14 @@
     text-wrap: pretty;
   }
 
-  .publication-entry p {
+  .publication-entry p,
+  .outreach-list p {
     margin: 0;
   }
 
   .publication-authors,
-  .publication-details {
+  .publication-details,
+  .outreach-list p {
     font-size: 1rem;
     line-height: 1.6;
   }
@@ -272,6 +279,37 @@
     gap: 0.375rem;
     padding-block: 0.125rem;
   }
+
+  .outreach-jumps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+  }
+
+  .outreach > section {
+    display: grid;
+    gap: 2rem;
+    border-top: 1px solid #dedbd6;
+    padding-top: 3rem;
+  }
+  .outreach > section + section { margin-top: 4rem; }
+  .outreach > section > header,
+  .outreach-content { min-width: 0; }
+  .outreach h2 { margin: 0 0 0.75rem; font-size: 1.75rem; }
+  .outreach > section > header p { margin: 0; max-width: 28ch; font-size: 1rem; line-height: 1.6; }
+  @media (min-width: 48rem) {
+    .outreach-page { --outreach-gap: 2.5rem; }
+    .outreach > section { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--outreach-gap); }
+    .outreach-page > header,
+    .outreach-jumps { margin-left: calc((100% + var(--outreach-gap) + var(--outreach-gap)) / 3); }
+  }
+  @media (min-width: 64rem) {
+    .outreach-page { --outreach-gap: 4rem; }
+  }
+  .outreach svg { display: inline; vertical-align: baseline; }
+  .outreach [id] { scroll-margin-top: 1.5rem; }
 
   .home-hero-paper {
     background: linear-gradient(rgb(255 255 255 / 55%), rgb(255 255 255 / 55%)),

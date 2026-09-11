@@ -1,0 +1,60 @@
+organisation:
+  - year: 2026
+    id: wact-2026
+    title: 9th Workshop on Algebraic Complexity Theory
+    venues:
+      - Co-organiser · WACT 2026 · Copenhagen · June 2026
+    links:
+      - {label: Workshop website, url: 'https://sites.google.com/view/wact2026/'}
+
+presentations:
+  - year: 2026
+    title: On Closure Properties of Read-Once Oblivious Algebraic Branching Programs
+    venues:
+      - Poster presentation · HALG 2026 · Stockholm
+    links:
+      - {label: Poster, url: /slides/2026-RO-factoring-poster.pdf}
+      - {label: HALG website, url: 'https://2026.highlightsofalgorithms.org/'}
+  - year: 2025
+    title: On Closure Properties of Read-Once Oblivious Algebraic Branching Programs
+    venues:
+      - Talk · University of Cambridge
+      - Talk · ITU Seminar on Algorithms and Complexity
+    links:
+      - {label: Slides, url: /slides/2025-RO-factoring.pdf}
+  - year: 2024
+    title: Monotone Bounded-Depth Complexity of Homomorphism Polynomials
+    venues:
+      - Talk · Algorithmic Research-Cooperation around Oresund (ARCO) · Malmö
+    links:
+      - {label: Slides, url: /slides/2024-arco.pdf}
+      - {label: ARCO website, url: 'https://mau.se/en/about-us/faculties-and-departments/faculty-of-technology-and-society/department-of-computer-science-and-media-technology/arco/#accordion-139642'}
+  - year: 2024
+    title: Presentable Version of Border Complexity and Applications to Circuit Factoring
+    venues:
+      - Welcome talk · Theory Group, ITU / BARC, University of Copenhagen · 15 November 2024
+    links:
+      - {label: Slides, url: /slides/2024-itu.pdf}
+      - {label: Event, url: 'https://barc.ku.dk/events/barc-talk-by-prateek-dwivedi/'}
+  - year: 2023
+    title: Deterministic identity testing paradigms for bounded top-fanin depth-4 circuits
+    venues:
+      - Talk · Workshop on Algebra and Computation (WAC) · Göteborg
+      - Talk · 7th Workshop on Algebraic Complexity Theory (WACT) · Warwick
+    links:
+      - {label: Slides, url: /slides/2023-wact.pdf}
+      - {label: Video (WACT), url: 'https://echo360.org.uk/media/66745363-9a7f-41c0-a080-cfd041923d6d/public'}
+      - {label: WAC website, url: 'https://sites.google.com/view/wac2023/home'}
+      - {label: WACT website, url: 'https://www.dcs.warwick.ac.uk/~u2270030/wact/'}
+  - year: 2021
+    title: Treading the Border Complexity and Identity Testing Paradigms
+    venues:
+      - Talk · State of the Art Seminar (PhD requirement) · IIT Kanpur
+    links:
+      - {label: Slides, url: /slides/2021-sota.pdf}
+  - year: 2021
+    title: Deterministic identity testing paradigms for bounded top-fanin depth-4 circuits
+    venues:
+      - Talk · CS Theory Seminar, Georgetown University · Online
+    links:
+      - {label: Related slides (2023), url: /slides/2023-wact.pdf}

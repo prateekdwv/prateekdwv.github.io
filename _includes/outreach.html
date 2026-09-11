@@ -1,0 +1,41 @@
+{%- capture external_arrow -%}<svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12 12 4M4 4h8v8"/></svg>{%- endcapture -%}
+<div class="outreach">
+  <nav class="outreach-jumps" aria-label="On this page">
+    <a href="#organisation">Organisation</a><span aria-hidden="true">·</span>
+    <a href="#talks">Talks &amp; Posters</a>
+  </nav>
+  {%- assign collections = 'organisation,presentations' | split: ',' -%}
+  {%- for collection in collections -%}
+    {%- if collection == 'organisation' -%}{%- assign section_id = 'organisation' -%}{%- assign section_title = 'Organisation' -%}{%- else -%}{%- assign section_id = 'talks' -%}{%- assign section_title = 'Talks & Posters' -%}{%- endif -%}
+    <section aria-labelledby="{{ section_id }}">
+      <header>
+        <h2 id="{{ section_id }}">{{ section_title | escape }}</h2>
+        <p>{%- if collection == 'organisation' -%}Workshops I help organise.{%- else -%}Presentations and supporting material.{%- endif -%}</p>
+      </header>
+      <div class="outreach-content">
+      {%- assign years = site.data.outreach[collection] | group_by: 'year' | sort: 'name' | reverse -%}
+      {%- for year in years -%}
+        <section class="outreach-group" aria-labelledby="{{ section_id }}-{{ year.name }}">
+          <h3 id="{{ section_id }}-{{ year.name }}">{{ year.name }}</h3>
+          <ul class="outreach-list">
+            {%- for entry in year.items -%}
+              <li{% if entry.id %} id="{{ entry.id }}"{% endif %}>
+                <h4>{{ entry.title | escape }}</h4>
+                {%- for venue in entry.venues -%}<p>{{ venue | escape }}</p>{%- endfor -%}
+                <div class="publication-links">
+                  {%- for link in entry.links -%}
+                    {%- assign destination = link.url -%}
+                    {%- assign first_character = destination | slice: 0, 1 -%}
+                    {%- if first_character == '/' -%}{%- assign destination = destination | relative_url -%}{%- endif -%}
+                    <a href="{{ destination | escape }}" aria-label="{{ link.label | escape }}: {{ entry.title | escape }}">{{ link.label | escape }}{%- unless first_character == '/' -%} {{ external_arrow }}{%- endunless -%}</a>
+                  {%- endfor -%}
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </section>
+      {%- endfor -%}
+      </div>
+    </section>
+  {%- endfor -%}
+</div>
