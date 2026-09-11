@@ -4,6 +4,7 @@ layout: default
 <article>
   {{ content }}
 </article>
+<p><a href="{{ '/writing/' | relative_url }}">← All writing</a></p>
 
 {% if page.bluesky_post %}
   {% include bluesky-comments.html %}

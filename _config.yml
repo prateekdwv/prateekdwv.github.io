@@ -9,6 +9,11 @@ timezone: America/Vancouver
 markdown: kramdown
 highlighter: rouge
 permalink: /blog/:title/
+plugins:
+  - jekyll-paginate
+paginate: 5
+paginate_path: /writing/page:num/
+excerpt_separator: "<!--more-->"
 
 kramdown:
   input: GFM

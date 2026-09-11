@@ -47,6 +47,9 @@ jobs:
       - name: Test diagram pipeline
         run: npm run test:diagrams
 
+      - name: Test writing pagination and previews
+        run: npm run test:writing
+
       - name: Build site
         run: npm run build
         env:

@@ -46,6 +46,15 @@ the hero's `srcset` and `sizes`; browsers without WebP support use the JPEG.
 If the original dimensions change, update the image's `width` and `height` in
 `_includes/home-hero.html` too.
 
+## Writing
+
+Posts stay in `blog/_posts/`; their existing `/blog/` URLs are preserved. The
+Writing index at `/writing/` shows five posts per page using `jekyll-paginate`.
+For a long post, place `<!--more-->` after a complete paragraph near 300 words.
+Short posts without a marker appear in full. Start body sections at `##`;
+preview headings and local anchors are adjusted automatically for the index.
+The index does not load article comments. Run `bundle install` after updating gems.
+
 ## TikZ diagrams
 
 Add a file such as `_diagrams/branching-program.tex` containing one

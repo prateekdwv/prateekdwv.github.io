@@ -1,0 +1,15 @@
+{%- assign excerpt = include.post.excerpt | remove: site.excerpt_separator -%}
+{%- comment -%}Keep headings below the article title and anchors unique across previews.{%- endcomment -%}
+{%- assign levels = '5,4,3,2' | split: ',' -%}
+{%- for level in levels -%}
+  {%- assign next_level = level | plus: 1 -%}
+  {%- assign opening = '<h' | append: level -%}
+  {%- assign replacement = '<h' | append: next_level -%}
+  {%- assign closing = '</h' | append: level -%}
+  {%- assign closing_replacement = '</h' | append: next_level -%}
+  {%- assign excerpt = excerpt | replace: opening, replacement | replace: closing, closing_replacement -%}
+{%- endfor -%}
+{%- assign prefix = include.post.id | slugify | prepend: 'excerpt-' | append: '-' -%}
+{%- assign id_prefix = prefix | prepend: 'id="' -%}
+{%- assign href_prefix = prefix | prepend: 'href="#' -%}
+{{- excerpt | replace: 'id="', id_prefix | replace: 'href="#', href_prefix -}}

@@ -1,14 +1,15 @@
 ---
-layout: default
-title: Blog
+layout: null
+permalink: /blog/
 ---
-
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <time class="block" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
-      {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
-    </li>
-  {% endfor %}
-</ul>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moved to Writing</title>
+    <link rel="canonical" href="{{ '/writing/' | absolute_url }}">
+    <meta http-equiv="refresh" content="0; url={{ '/writing/' | relative_url }}">
+  </head>
+  <body><p>This page has moved to <a href="{{ '/writing/' | relative_url }}">Writing</a>.</p></body>
+</html>

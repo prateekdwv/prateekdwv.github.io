@@ -23,10 +23,8 @@
         - label: "Full Version"
           url: "https://doi.org/10.48550/arXiv.2601.09343"
 
-- year: 2025
-  publications:
     - title: "On Closure Properties of Read-Once Oblivious Algebraic Branching Programs"
-      venue: ITCS 2025
+      venue: ITCS 2026
       venue_name: Innovations in Theoretical Computer Science
       coauthors:
         - "Robert Andrews"
@@ -43,6 +41,8 @@
         - label: "Poster"
           url: "/slides/2026-RO-factoring-poster.pdf"
 
+- year: 2025
+  publications:
     - title: "A primer on the closure of algebraic complexity classes under factoring"
       kind: Survey
       coauthors:

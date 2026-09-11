@@ -17,6 +17,8 @@ This doesn’t mean AI has become sentient, though that misunderstanding persist
 
 What makes this even more remarkable is that these AI systems are general-purpose large language models (LLMs). Unlike AlphaGo or AlphaFold, which were trained with the explicit purpose of mastering Go or protein folding, these models were not specialised for maths. These models—trained on vast amounts of general text and code rather than specialized mathematical datasets—nevertheless solved the Olympiad problems without any internet access or human intervention.
 
+<!--more-->
+
 There have been concerns, of course. Notably, Fields Medalist Terence Tao cautioned that comparing an AI’s performance to a human’s isn’t exactly level playing field—these models, even unaided by internet access or human intervention, demonstrate far greater sustained capability than a single high‑school student solving Olympiad problems. But even he acknowledged that this is a major milestone. 
 
 Every major development in generative AI seems to divide people into two camps. One camp is enthusiastic, even ecstatic—predicting that machines are becoming superintelligent and that a technological doomsday may not be far. The other is deeply sceptical, calling it all a hype bubble bound to burst.  

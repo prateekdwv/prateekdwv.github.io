@@ -10,6 +10,8 @@ Monetary challenges during graduate studies are one of the primary deterrents to
 
 It certainly helps if one has the necessary financial awareness, which develops with experience, and is not discussed at a young age. This is why those joining after spending some years in the industry don’t sweat from it. I wanted to write my thoughts on it, as for some it may be “emphasis” though for others it could be “re-emphasis”, either way I hope it brings “reassurance”. The suggestions I want to make are unusual and are seldom discussed, but after receiving occasional appreciation for peers, I was motivated to turn them into a more permanent form. They may not fit everyone, but it isn’t meant to be, as they only intend to light the spark for thinking about it.
 
+<!--more-->
+
 ## Invest in Medical and Term Insurance
 
 This was one of the first things I did when my stipend started, and I cannot stress enough the importance of it. It is interesting how everyone accepts the necessity of it but are still full of excuses not to buy one as soon as possible. Indian premier institutes extend health insurance to all their students from academic fees, including PhD candidates, with coverage of ₹1-1.5L. Health care cost in India are growing exponentially; on top of it, covid has worsened the situation. It is terrible to assume that such a modest amount would suffice for prolonged health care if needed. There are serval benefits to start with it early, but I will let my readers seek it from a qualified financial advisor.

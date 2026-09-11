@@ -1,0 +1,42 @@
+---
+layout: default
+title: Essays & Notes
+subtitle: >-
+  On science, books, travel, and academic life. Receive new posts in your inbox.
+  <a href="mailto:add@rssby.email?body=https%3A%2F%2Fwww.prateekdwivedi.in%2Ffeed.xml">Subscribe by email.</a>
+---
+<div class="writing-list">
+  {% for post in paginator.posts %}
+    {% assign post_id = post.id | slugify %}
+    <article aria-labelledby="{{ post_id }}-title">
+      <header>
+        <h2 id="{{ post_id }}-title"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%-d %B %Y' }}</time>
+        {% if post.subtitle %}<p class="writing-summary">{{ post.subtitle | escape }}</p>{% endif %}
+      </header>
+      <div class="writing-excerpt">{% include writing-excerpt.html post=post %}</div>
+      {% assign full_text = post.content | remove: site.excerpt_separator | strip_html | normalize_whitespace %}
+      {% assign preview_text = post.excerpt | remove: site.excerpt_separator | strip_html | normalize_whitespace %}
+      {% if post.content contains site.excerpt_separator and full_text != preview_text %}
+        <p class="writing-more"><a href="{{ post.url | relative_url }}" aria-label="Read more: {{ post.title | escape }}">Read more <span aria-hidden="true">→</span></a></p>
+      {% endif %}
+    </article>
+  {% else %}
+    <p>No writing published yet.</p>
+  {% endfor %}
+</div>
+{% if paginator.total_pages > 1 %}
+  <nav class="writing-pagination" aria-label="Writing pages">
+    {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}" rel="prev">← Previous</a>{% endif %}
+    {% for number in (1..paginator.total_pages) %}
+      {% if number == paginator.page %}
+        <span aria-current="page" aria-label="Page {{ number }}">{{ number }}</span>
+      {% else %}
+        {% assign destination = site.paginate_path | replace: ':num', number %}
+        {% if number == 1 %}{% assign destination = '/writing/' %}{% endif %}
+        <a href="{{ destination | relative_url }}" aria-label="Page {{ number }}">{{ number }}</a>
+      {% endif %}
+    {% endfor %}
+    {% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}" rel="next">Next →</a>{% endif %}
+  </nav>
+{% endif %}

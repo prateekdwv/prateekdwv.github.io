@@ -280,6 +280,48 @@
     padding-block: 0.125rem;
   }
 
+  :root {
+    --page-title-size: 2rem;
+    --section-title-size: 1.5rem;
+    --entry-title-size: 1.25rem;
+  }
+  @media (min-width: 48rem) {
+    :root {
+      --page-title-size: 2.5rem;
+      --section-title-size: 1.75rem;
+      --entry-title-size: 1.375rem;
+    }
+  }
+  .page-title {
+    margin: 0;
+    font-size: var(--page-title-size);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: var(--color-black);
+  }
+  .site-page .page-subtitle,
+  .writing-summary { font-size: 1rem; line-height: 1.6; }
+  .section-title,
+  .site-page > h2,
+  .site-page > article h2 { font-size: var(--section-title-size); font-weight: 500; }
+  .outreach h4 { font-size: var(--entry-title-size); }
+  .writing-list { border-top: 1px solid #dedbd6; padding-top: 2rem; }
+  .writing-list > article + article {
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid #dedbd6;
+  }
+  .writing-list > article > header { margin-bottom: 1.5rem; }
+  .writing-list > article > header h2 { margin: 0 0 0.5rem; font-size: var(--entry-title-size); }
+  .writing-list > article > header h2 a { font-weight: 600; }
+  .writing-summary { margin: 0.75rem 0 0; }
+  .writing-more { margin: 0; }
+  .writing-list a:hover { color: var(--color-name); }
+  .writing-pagination { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 3rem; font-size: 1rem; }
+  .writing-pagination [aria-current] { color: var(--color-name); font-weight: 600; }
+  .writing-pagination a, .writing-pagination span { padding: 0.5rem; }
+
   .outreach-jumps {
     display: flex;
     flex-wrap: wrap;
@@ -297,7 +339,7 @@
   .outreach > section + section { margin-top: 4rem; }
   .outreach > section > header,
   .outreach-content { min-width: 0; }
-  .outreach h2 { margin: 0 0 0.75rem; font-size: 1.75rem; }
+  .outreach h2 { margin: 0 0 0.75rem; font-size: var(--section-title-size); font-weight: 500; }
   .outreach > section > header p { margin: 0; max-width: 28ch; font-size: 1rem; line-height: 1.6; }
   @media (min-width: 48rem) {
     .outreach-page { --outreach-gap: 2.5rem; }

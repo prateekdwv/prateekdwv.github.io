@@ -12,9 +12,9 @@ layout: default
 <div class="research-layout{% if has_matching_diagrams %} has-diagrams{% endif %}" data-research-layout>
   <section class="site-page research-publications" data-publication-column aria-labelledby="publications-heading">
     <header class="mb-10">
-      <h1 id="publications-heading" class="m-0 text-4xl font-normal leading-tight tracking-tight text-black">{{ page.title | escape }}</h1>
-      {% if page.subtitle %}<p class="mt-4 mb-0 text-muted">{{ page.subtitle | escape }}</p>{% endif %}
-      <p class="mt-2 mb-0 text-muted">TikZ code for the diagrams is available on <a href="https://github.com/prateekdwv/prateekdwv.github.io/tree/website-redesign/_diagrams">GitHub</a>.</p>
+      <h1 id="publications-heading" class="page-title">{{ page.title | escape }}</h1>
+      {% if page.subtitle %}<p class="page-subtitle mt-4 mb-0 text-muted">{{ page.subtitle | escape }}</p>{% endif %}
+      <p class="page-subtitle mt-2 mb-0 text-muted">TikZ code for the diagrams is available on <a href="https://github.com/prateekdwv/prateekdwv.github.io/tree/website-redesign/_diagrams">GitHub</a>.</p>
     </header>
     {{ content }}
   </section>

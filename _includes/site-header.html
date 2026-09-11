@@ -12,6 +12,8 @@
           {% assign item_active = true %}
         {% elsif item.url != '/' and item_prefix == item.url %}
           {% assign item_active = true %}
+        {% elsif item.url == '/writing/' and page.layout == 'post' %}
+          {% assign item_active = true %}
         {% endif %}
         <li>
           <a href="{{ item.url | relative_url }}"{% if item_active %} aria-current="page" class="font-semibold text-accent underline decoration-2 underline-offset-8"{% else %} class="text-black no-underline hover:text-accent hover:underline hover:underline-offset-8 focus-visible:underline focus-visible:underline-offset-8"{% endif %}>{{ item.label }}</a>
@@ -28,6 +30,8 @@
         {% if page.url == item.url %}
           {% assign item_active = true %}
         {% elsif item.url != '/' and item_prefix == item.url %}
+          {% assign item_active = true %}
+        {% elsif item.url == '/writing/' and page.layout == 'post' %}
           {% assign item_active = true %}
         {% endif %}
           <li>
