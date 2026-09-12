@@ -302,6 +302,30 @@
   }
   .site-page .page-subtitle,
   .writing-summary { font-size: 1rem; line-height: 1.6; }
+  .breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+  }
+  .breadcrumb a[href],
+  .breadcrumb a[href]:hover {
+    color: var(--color-muted);
+    font-weight: 600;
+  }
+  .post-date {
+    display: block;
+    margin-top: 0.75rem;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
   .section-title,
   .site-page > h2,
   .site-page > article h2 { font-size: var(--section-title-size); font-weight: 500; }

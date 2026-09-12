@@ -22,9 +22,18 @@
           <h1 class="sr-only">{{ page.title | default: site.title }}</h1>
         {% else %}
         <header class="mb-10">
+          {% if page.layout == 'post' %}
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <a href="{{ '/' | relative_url }}">Home</a>
+              <span aria-hidden="true">&gt;</span>
+              <a href="{{ '/writing/' | relative_url }}">Blog</a>
+              <span aria-hidden="true">&gt;</span>
+              <span>{{ page.title | default: site.title }}</span>
+            </nav>
+          {% endif %}
           <h1 class="page-title">{{ page.title | default: site.title }}</h1>
           {% if page.subtitle %}<p class="page-subtitle mt-4 mb-0 text-muted">{{ page.subtitle }}</p>{% endif %}
-          {% if page.layout == 'post' %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time>{% endif %}
+          {% if page.layout == 'post' %}<time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time>{% endif %}
         </header>
         {% endif %}
       {% endunless %}
