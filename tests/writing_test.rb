@@ -85,6 +85,7 @@ Dir.mktmpdir('writing-test-') do |source|
         check(File.read(File.join(destination, path)).include?('<meta name="robots" content="noindex">'), "Missing noindex on #{path}")
       end
       check(File.read(File.join(destination, 'robots.txt')).include?("Sitemap: https://www.prateekdwivedi.in#{baseurl}/sitemap.xml"), 'Robots sitemap incorrect')
+      check(File.read(File.join(destination, '404.html')).include?("<a href=\"#{baseurl}/\">Return to the home page</a>"), '404 home link must be a clickable, root-relative link')
       feed = File.read(File.join(destination, 'feed.xml'))
       check(feed.scan('<item>').size == count, 'Empty manual updates should keep feed blog-only')
       check(!feed.include?('Publication data should not appear'), 'Publication data leaked into feed')
