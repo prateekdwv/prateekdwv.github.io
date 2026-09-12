@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title and page.title != site.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <link rel="canonical" href="{{ page.url | absolute_url | escape }}">
+    {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
     {% include social-meta.html content=content %}
     {% include analytics.html %}
     <link rel="icon" href="{{ '/favicon.svg' | relative_url }}?v=2" type="image/svg+xml">

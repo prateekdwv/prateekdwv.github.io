@@ -163,3 +163,67 @@ failure handling, and selection logic. Tests use temporary fixtures and never
 publish example diagrams. CI runs these checks and `npm run build`; it still
 does not deploy. Any deployment must publish the complete generated `_site/`
 directory, rather than relying on GitHub Pages to compile TikZ from source.
+
+
+## Search, migration, and privacy
+
+Normal pages have an absolute canonical URL. Redirects preserve fragments in their
+refresh/fallback links, but omit them from the destination canonical. Redirects
+are static HTML documents, **not HTTP 301 responses**.
+
+The sitemap is opt-in: add `sitemap: true` to a public page's front matter.
+Posts inherit this setting; Writing pagination inherits it from the index.
+Use `noindex: true` for publicly accessible pages that should stay out of search.
+Resources, Reading, and 404 use this flag. Do not disallow these URLs in robots.txt:
+crawlers need to read their noindex metadata. Neither setting makes a page private.
+
+Run `npm run test:writing` for canonical, sitemap, noindex, redirect, pagination,
+and feed checks with normal and nonempty base URLs. `npm run build` generates
+sitemap.xml and robots.txt automatically. No indexing or ranking is guaranteed.
+
+### Account and post-publication steps
+
+- In GoatCounter settings, verify individual-pageview collection is disabled.
+  Review optional location, browser, operating-system, language, and screen-size
+  collection; disable data you do not need. Record the chosen settings and actual
+  retention policy before publication, and update Privacy if needed. The source
+  code cannot verify or change these hosted-account settings.
+- Review `/privacy/` against those settings and the current provider policies.
+  It is a short transparency notice, not certification of legal compliance or a
+  guarantee of consent exemption. Review jurisdiction-specific requirements
+  separately. If Bluesky comments or other external embeds are enabled later,
+  update the notice to describe requests made when a page loads.
+- Reuse an existing verified Google Search Console property if available.
+  Otherwise add a **Domain property** for `prateekdwivedi.in` at
+  https://search.google.com/search-console/ and copy Google's verification TXT
+  record to the **authoritative DNS provider** (Hostinger if it manages the domain's
+  nameservers). Do not replace existing DNS records. Keep the verification record.
+- Once the redesign is published, submit
+  `https://www.prateekdwivedi.in/sitemap.xml` in Search Console. Inspect Home,
+  Research, Outreach, and one post with URL Inspection. Check HTTPS and the
+  non-www / github.io routes resolve to the preferred custom domain. Review
+  indexing reports after Google has recrawled the site.
+- Search Console DNS verification adds no visitor script or analytics cookies.
+  These account/DNS steps are manual; the repository workflow still builds only.
+
+
+### Migration and link audit (12 September 2026)
+
+Jekyll resolved the `master` source with its original configuration. Existing
+`/research/`, `/reading/`, all four `/blog/<title>/` post URLs, all 12 research
+PDFs, and all seven slide files survive at the same addresses. `/blog/`,
+`/reflections/`, and `/resources/` retain their redirects. Added `/contact/` →
+`/#contact` and `/tags/` → `/writing/`. The old Markdown pages resolved to slash
+URLs, not `.html` URLs, so no speculative aliases were added.
+
+All local page links and fragments passed. Of 54 external destinations, 50
+returned HTTP 200. These need a manual follow-up; links were preserved:
+
+- Bluesky profile (`https://bsky.app/profile/prateekdwv.bsky.social`): HTTP 404.
+- ARCO (`https://mau.se/en/about-us/faculties-and-departments/faculty-of-technology-and-society/department-of-computer-science-and-media-technology/arco/`): HTTP 404.
+- MIT Press, *Introduction to Algorithms* (`https://mitpress.mit.edu/9780262033848/introduction-to-algorithms/`): HTTP 403; automated access blocked.
+- Google Scholar profile (`https://scholar.google.com/citations?user=TXg6K04AAAAJ&hl=en`): HTTP 403; automated access blocked.
+
+All 12 PDFs have extractable first-page text with titles and author information,
+and are below 5 MB. This checks basic discoverability, not actual inclusion in
+Google Scholar. Current Scholar guidance: https://scholar.google.com/intl/en/scholar/inclusion.html

@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: Reading
 subtitle: My Literary Escapades

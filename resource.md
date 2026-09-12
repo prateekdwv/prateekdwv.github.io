@@ -1,4 +1,5 @@
 ---
+noindex: true
 layout: default
 title: Resources
 subtitle: Books, courses, and writing by others that I find useful.

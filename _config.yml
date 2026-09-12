@@ -24,6 +24,12 @@ defaults:
     values:
       layout: default
 
+  - scope:
+      path: ""
+      type: posts
+    values:
+      sitemap: true
+
 exclude:
   - scripts
   - tests

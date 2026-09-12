@@ -1,0 +1,14 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- assign documents = site.pages | concat: site.posts | sort: 'url' -%}
+  {%- assign previous_url = nil -%}
+  {%- for document in documents -%}
+    {%- if document.sitemap == true and document.noindex != true and document.layout != 'redirect' and document.url != previous_url %}
+  <url><loc>{{ document.url | absolute_url | xml_escape }}</loc></url>
+      {%- assign previous_url = document.url -%}
+    {%- endif -%}
+  {%- endfor %}
+</urlset>

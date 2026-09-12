@@ -1,4 +1,5 @@
 ---
+sitemap: true
 layout: home
 title: Prateek Dwivedi
 subtitle: Computer Science Theoretician
