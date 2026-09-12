@@ -3,6 +3,7 @@ layout: home
 title: Prateek Dwivedi
 subtitle: Computer Science Theoretician
 show_subscription: true
+social_description: DAAD PRIME Fellow at Universität des Saarlandes and Université Savoie Mont Blanc.
 # Short hero introduction; Markdown links are supported.
 hero_intro: >-
   I am a [DAAD PRIME Fellow](https://www.daad.de/en/studying-in-germany/scholarships/daad-funding-programmes/prime/){:target="_blank" rel="noopener noreferrer"}
