@@ -35,3 +35,6 @@ exclude:
   - package.json
   - package-lock.json
   - node_modules
+
+# Restored from master. Universal Analytics is retired; replace with a GA4 G- ID to collect new data.
+google_analytics: "UA-172366957-1"
