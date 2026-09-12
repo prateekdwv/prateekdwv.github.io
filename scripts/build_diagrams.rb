@@ -2,7 +2,6 @@
 # All paths are relative to the repository, not to the caller's working directory.
 require 'digest'
 require 'fileutils'
-require 'json'
 require 'rexml/document'
 require 'tmpdir'
 require 'timeout'

@@ -19,9 +19,6 @@
     {% include site-header.html %}
     <main id="main-content"{% unless page.layout == "home" or page.layout == "research" %} class="site-page mx-auto box-border w-full {% if page.url == '/outreach/' %}outreach-page max-w-[90rem]{% else %}max-w-4xl{% endif %} px-6 py-14 md:px-10"{% endunless %}>
       {% unless page.layout == "home" or page.layout == "research" %}
-        {% if page.hide_page_heading %}
-          <h1 class="sr-only">{{ page.title | default: site.title }}</h1>
-        {% else %}
         <header class="mb-10">
           {% if page.layout == 'post' %}
             <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -36,7 +33,6 @@
           {% if page.subtitle %}<p class="page-subtitle mt-4 mb-0 text-muted">{{ page.subtitle }}</p>{% endif %}
           {% if page.layout == 'post' %}<time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%-d %B %Y' }}</time>{% endif %}
         </header>
-        {% endif %}
       {% endunless %}
       {{ content }}
     </main>

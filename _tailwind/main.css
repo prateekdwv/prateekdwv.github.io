@@ -7,12 +7,12 @@
 @source "../_layouts";
 @source "../*.html";
 @source "../blog/*.html";
+@source "../writing";
 
 @theme {
   --color-black: #202020;
   --color-white: #ffffff;
-  --color-accent: #202020;
-  --color-name: #C8553D;
+  --color-accent: #C8553D;
   --color-muted: #606060;
 }
 
@@ -44,11 +44,6 @@
     color: var(--color-black);
     font-weight: 500;
     text-decoration: none;
-  }
-
-  main a[href]:hover,
-  .site-footer a[href]:hover {
-    color: var(--color-black);
   }
 
   main a:focus-visible,
@@ -206,7 +201,7 @@
   }
 
   nav[aria-label="Primary navigation"] a {
-    text-decoration-color: var(--color-name);
+    text-decoration-color: var(--color-accent);
   }
 
   .publication-year + .publication-year,
@@ -217,7 +212,7 @@
   .publication-year h2,
   .outreach h3 {
     margin: 0 0 1.5rem;
-    color: var(--color-name);
+    color: var(--color-accent);
     font-size: 1.25rem;
     font-weight: 500;
   }
@@ -341,9 +336,9 @@
   .writing-list > article > header h2 a { font-weight: 600; }
   .writing-summary { margin: 0.75rem 0 0; }
   .writing-more { margin: 0; }
-  .writing-list a:hover { color: var(--color-name); }
+  .writing-list a:hover { color: var(--color-accent); }
   .writing-pagination { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 3rem; font-size: 1rem; }
-  .writing-pagination [aria-current] { color: var(--color-name); font-weight: 600; }
+  .writing-pagination [aria-current] { color: var(--color-accent); font-weight: 600; }
   .writing-pagination a, .writing-pagination span { padding: 0.5rem; }
 
   .outreach-jumps {

@@ -9,7 +9,7 @@ end
 
 root = File.expand_path('..', __dir__)
 Dir.mktmpdir('writing-test-') do |source|
-  %w[_layouts _includes _data _plugins writing blog/index.html feed.xml].each do |name|
+  %w[_layouts _includes _data _plugins writing blog/index.html reflections.html resources.html feed.xml].each do |name|
     target = File.join(source, name)
     FileUtils.mkdir_p(File.dirname(target))
     FileUtils.cp_r(File.join(root, name), target)
@@ -23,6 +23,9 @@ Dir.mktmpdir('writing-test-') do |source|
         body = "Opening #{i}.\n\n## Shared heading\n\n1. First\n2. Second with *emphasis* and a footnote.[^1]\n\n[^1]: A reference.\n"
         body += "\n<!--more-->\n" if i.positive?
         body += "\nHidden remainder #{i}.\n" if i > 1
+        body += "\n![Photo][photo]\n\n[photo]: {{ '/img/photo.png' | relative_url }}\n" if i == 2
+        body += "\n<img src='https://example.org/photo.png?a=1&amp;b=2'>\n\n![Later](/img/later.png)\n" if i == 3
+        body += "\n```html\n<img src='/img/example.png'>\n```\n" if i == 4
         File.write(File.join(posts, "2020-01-#{format('%02d', i + 1)}-post-#{i}.md"),
           "---\nlayout: post\ntitle: Post #{i}\nsubtitle: Summary #{i}\n---\n#{body}")
       end
@@ -56,8 +59,21 @@ Dir.mktmpdir('writing-test-') do |source|
       check(titles == count.times.to_a.reverse.map { |i| "Post #{i}" }, 'Posts missing, duplicated, or out of order')
       combined = Dir[File.join(destination, 'writing/**/*.html')].map { |p| File.read(p) }.join
       check(combined.scan('class="writing-more"').size == [count - 2, 0].max, 'Read more shown for complete or empty-tail posts')
-      redirect = File.read(File.join(destination, 'blog/index.html'))
-      check(redirect.include?("url=#{baseurl}/writing/"), 'Blog redirect broken')
+      {'blog' => '/writing/', 'reflections' => '/outreach/#talks', 'resources' => '/resource/'}.each do |old, target|
+        redirect = File.read(File.join(destination, old, 'index.html'))
+        check(redirect.include?("url=#{baseurl}#{target}"), "#{old} redirect broken")
+        check(redirect.include?("href=\"https://www.prateekdwivedi.in#{baseurl}#{target}\""), 'Redirect canonical broken')
+        check(redirect.include?("<a href=\"#{baseurl}#{target}\""), 'Redirect fallback broken')
+      end
+      count.times do |i|
+        html = File.read(File.join(destination, "blog/post-#{i}/index.html"))
+        expected = case i
+                   when 2 then "https://www.prateekdwivedi.in#{baseurl}/img/photo.png"
+                   when 3 then 'https://example.org/photo.png?a=1&amp;b=2'
+                   end
+        images = html.scan(/(?:property="og:image"|name="twitter:image") content="([^"]+)"/).flatten
+        check(images == (expected ? [expected, expected] : []), "Wrong social image for post #{i}")
+      end
       feed = File.read(File.join(destination, 'feed.xml'))
       check(feed.scan('<item>').size == count, 'Empty manual updates should keep feed blog-only')
       check(!feed.include?('Publication data should not appear'), 'Publication data leaked into feed')

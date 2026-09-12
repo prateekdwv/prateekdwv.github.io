@@ -1,18 +1,16 @@
-Jekyll::Hooks.register :posts, :pre_render do |post|
-  next if post.data["social_image"]
+require 'cgi'
 
-  source = File.read(post.path)
-  markdown = source.match(/!\[[^\]]*\]\(([^)\s]+)(?:\s+["'][^"']*["'])?\)/)
-  html = source.match(/<img\b[^>]*\bsrc=["']([^"']+)["']/i)
+module SocialImages
+  # Jekyll has already converted Markdown images (including references) to HTML.
+  def first_image(html)
+    image = html.to_s[/<img\b[^>]*?\ssrc\s*=\s*["']([^"']+)["']/i, 1]
+    return unless image
 
-  image =
-    if markdown && html
-      markdown.begin(0) < html.begin(0) ? markdown[1] : html[1]
-    elsif markdown
-      markdown[1]
-    elsif html
-      html[1]
-    end
-
-  post.data["first_image"] = image if image
+    image = CGI.unescapeHTML(image)
+    # The metadata template applies absolute_url, so avoid adding baseurl twice.
+    baseurl = @context.registers[:site].config['baseurl'].to_s.chomp('/')
+    image.start_with?("#{baseurl}/") ? image.delete_prefix(baseurl) : image
+  end
 end
+
+Liquid::Template.register_filter(SocialImages)

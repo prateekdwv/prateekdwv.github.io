@@ -1,5 +1,28 @@
 # Local development
 
+## Where things live
+
+| Edit | Source |
+| --- | --- |
+| Homepage and biography | `index.md` |
+| Papers, talks, news, contact details | The corresponding YAML file in `_data/` |
+| Blog posts / unpublished drafts | `blog/_posts/` / `_drafts/` |
+| Unlisted resources and reading log | `resource.md`, `reading.md`, `_data/reading.yml` |
+| TikZ source and shared macros | `_diagrams/` |
+| Page structure / repeated markup | `_layouts/` / `_includes/` |
+| Styles / browser behaviour | `_tailwind/main.css` / `assets/js/` |
+| RSS assembly / post-image detection | `_plugins/` |
+| Diagram compiler / focused checks | `scripts/` / `tests/` |
+| Public downloads and images | `papers/`, `slides/`, `img/`, `resume.pdf` |
+
+`_site/`, `node_modules/`, `.jekyll-cache/`, `.cache/diagrams/`,
+`assets/css/main.css`, `assets/diagrams/`, and `_data/diagrams.yml` are generated.
+Do not edit or commit them. Lockfiles record dependencies; do not trim them by hand.
+The small `blog/index.html`, `reflections.html`, and `resources.html` files preserve
+old URLs through one redirect layout. Moving existing public files changes their URLs.
+
+## Commands
+
 Install the Ruby and Node.js dependencies after cloning the repository:
 
 ```sh
@@ -8,6 +31,7 @@ npm ci
 ```
 
 The expected Node.js version is recorded in `.nvmrc`. If you use `nvm`, select it with `nvm use` before installing dependencies.
+Select the Ruby version in `.ruby-version` before running Bundler.
 
 Build diagrams, the generated Tailwind stylesheet, and the website together:
 
@@ -27,7 +51,10 @@ bundle exec jekyll serve
 
 The Tailwind input is `_tailwind/main.css`. Its generated `assets/css/main.css` output is intentionally excluded from Git.
 
-Tailwind scans Jekyll layouts, includes, and HTML page templates. Keep Tailwind classes in those component files and write complete class names instead of constructing them from Liquid fragments. Markdown should use Jekyll includes when it needs a styled component.
+Tailwind scans Jekyll layouts, includes, and HTML page templates, including
+`writing/`. Keep complete class names in these templates. Markdown should use
+includes when it needs a styled component. Shared typography and colours belong
+in `_tailwind/main.css`; `--color-accent` is the rosy-copper colour.
 
 ## Updating the hero photo
 
@@ -54,6 +81,34 @@ For a long post, place `<!--more-->` after a complete paragraph near 300 words.
 Short posts without a marker appear in full. Start body sections at `##`;
 preview headings and local anchors are adjusted automatically for the index.
 The index does not load article comments. Run `bundle install` after updating gems.
+
+Social previews use the first image in the rendered post, including Markdown
+reference images and HTML images. Pages and posts without images share only text;
+there is no social-card generator or separate image catalogue.
+
+Bluesky comments are kept for future use but currently disabled on all posts.
+Enable them by adding `bluesky_post: https://bsky.app/profile/…/post/…` to a post
+from the account identified by `bluesky_did` in `_config.yml`. Their script and
+stylesheet load only on enabled posts. Keep the vendored component's licence.
+
+## Subscriber updates
+
+`/feed.xml` combines blog posts with deliberate announcements in
+`_data/feed_updates.yml`. Leave that file as `[]` for blog-only updates. To add an
+announcement, replace `[]` with a YAML list:
+
+```yaml
+- date: 2026-09-12
+  type: paper
+  title: An announcement title
+  summary: A short description of the announcement.
+  url: /research/
+```
+
+The date and title determine a manual item's stable identity; edit the summary
+without changing them to retain that identity. Publication metadata never enters
+the feed. The feed contains the latest 20 combined items; delivery and deduplication
+are handled by the subscriber's RSS/email service.
 
 ## TikZ diagrams
 
@@ -97,7 +152,7 @@ sources tagged with that year. Years with no matching diagram remain empty;
 multiple diagrams for a year compete randomly for its single slot. Diagrams scale to fit
 their year section without changing publication spacing. Each diagram has a full-column-width
 frame with 19px padding; height follows the image proportions, up to
-320px including padding and border. Phones show up to three afterward,
+320px including padding, with no visible border. Phones show up to three afterward,
 also limited to one per matching publication year, in publication-year order.
 Only selected images are loaded; clicking one opens the full SVG. Filenames
 provide accessible link labels, so choose descriptive names. Without JavaScript,
