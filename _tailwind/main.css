@@ -314,19 +314,20 @@
   }
 
   .publication-authors,
-  .publication-details,
   .outreach-list p {
     font-size: 1rem;
     line-height: 1.6;
   }
 
-  .publication-entry .publication-type {
+  .publication-entry .publication-type,
+  .publication-details p {
     margin-top: 0.5rem;
     font-size: 0.875rem;
     line-height: 1.6;
   }
 
-  .publication-type strong {
+  .publication-type strong,
+  .publication-details strong {
     font-weight: 600;
   }
 
