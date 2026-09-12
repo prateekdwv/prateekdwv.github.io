@@ -160,9 +160,24 @@ the publication list remains visible and the optional diagrams are omitted.
 
 Run `npm run test:diagrams` to check real compilation, cache invalidation,
 failure handling, and selection logic. Tests use temporary fixtures and never
-publish example diagrams. CI runs these checks and `npm run build`; it still
-does not deploy. Any deployment must publish the complete generated `_site/`
-directory, rather than relying on GitHub Pages to compile TikZ from source.
+publish example diagrams. CI runs these checks and `npm run build` on
+`website-redesign` and `master`. Only `master` uploads the complete generated
+`_site/` directory and deploys it through GitHub Pages after the checks pass.
+
+### First deployment
+
+Before merging the redesign into `master`, switch Pages from branch builds to
+GitHub Actions (Settings → Pages → Source), or use:
+
+```sh
+gh api --method PUT repos/prateekdwv/prateekdwv.github.io/pages -f build_type=workflow
+```
+
+Keep the existing custom domain and HTTPS setting. Then merge the reviewed
+redesign into `master` and push it; this starts the first deployment. Subsequent
+pushes to `master` publish automatically. The workflow can also be rerun manually
+on `master`. A failed build does not replace the live site. No new DNS records,
+personal access token, or repository secrets are required for Pages deployment.
 
 
 ## Search, migration, and privacy
@@ -204,7 +219,7 @@ sitemap.xml and robots.txt automatically. No indexing or ranking is guaranteed.
   non-www / github.io routes resolve to the preferred custom domain. Review
   indexing reports after Google has recrawled the site.
 - Search Console DNS verification adds no visitor script or analytics cookies.
-  These account/DNS steps are manual; the repository workflow still builds only.
+  These account/DNS steps require access to the corresponding accounts.
 
 
 ### Migration and link audit (12 September 2026)
