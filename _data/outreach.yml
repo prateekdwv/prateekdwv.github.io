@@ -7,6 +7,14 @@ organisation:
     links:
       - {label: Workshop website, url: 'https://sites.google.com/view/wact2026/'}
 
+  - year: 2024
+    id: sigtacs
+    title: Special Interest Group on Theoretical Aspects of Computer Science
+    venues:
+      - Coordinator · SIGTACS · IIT Kanpur
+    links:
+      - {label: SIGTACS website, url: 'https://sigtacs.github.io/'}
+
 presentations:
   - year: 2026
     title: On Closure Properties of Read-Once Oblivious Algebraic Branching Programs

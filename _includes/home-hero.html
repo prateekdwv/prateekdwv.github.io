@@ -1,11 +1,11 @@
 <section class="home-hero-paper grid box-border h-full w-full items-stretch md:grid-cols-[minmax(0,3fr)_minmax(18rem,2fr)] lg:grid-cols-[minmax(0,11fr)_minmax(18rem,9fr)]" aria-labelledby="home-heading">
   <div class="flex items-center px-6 py-12 md:pl-10 md:pr-6 lg:py-10 lg:pl-[max(4.5rem,calc((100vw-90rem)/2+4.5rem))] lg:pr-6">
     <div class="max-w-3xl">
-      <h1 id="home-heading" class="m-0 text-4xl font-normal leading-tight tracking-tight text-black sm:text-5xl md:whitespace-nowrap md:text-[1.75rem] lg:text-4xl">
+      <h1 id="home-heading" class="m-0 font-serif text-[2rem] font-medium leading-[1.2] text-black lg:text-4xl">
         {{ page.subtitle | escape }}
       </h1>
-      {% capture hero_intro %}{{ page.hero_intro }} <a href="#about" class="whitespace-nowrap font-medium">Read more <span aria-hidden="true">↓</span></a>{% endcapture %}
-      <div class="mt-7 mb-[1em] max-w-lg text-lg leading-8 text-black/70 [&>p:first-child]:mt-0 [&>p:last-child]:mb-0">
+      {% capture hero_intro %}{{ page.hero_intro }} <a href="#about" class="whitespace-nowrap">Read more <span aria-hidden="true">↓</span></a>{% endcapture %}
+      <div class="mt-7 mb-[1em] max-w-lg reading-prose [&>p:first-child]:mt-0 [&>p:last-child]:mb-0">
         {{ hero_intro | markdownify }}
       </div>
       <div class="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">

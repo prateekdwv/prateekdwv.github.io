@@ -9,10 +9,53 @@
 @source "../blog/*.html";
 @source "../writing";
 
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("../fonts/SourceSerif4-Roman.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Serif 4";
+  src: url("../fonts/SourceSerif4-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../fonts/SourceSans3-Roman.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../fonts/SourceSans3-Italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Noto Serif Devanagari";
+  src: url("../fonts/NotoSerifDevanagari-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+
 @theme {
+  --font-devanagari: "Noto Serif Devanagari", "Kohinoor Devanagari", "Nirmala UI", serif;
+  --font-sans: "Source Sans 3", system-ui, "Nirmala UI", sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Noto Serif Devanagari", "Kohinoor Devanagari", "Nirmala UI", serif;
   --color-black: #202020;
   --color-white: #ffffff;
   --color-accent: #C8553D;
+  --color-accent-text: #BF4D36;
+  --color-prose: #404040;
   --color-muted: #606060;
 }
 
@@ -42,7 +85,7 @@
   main a[href],
   .site-footer a[href] {
     color: var(--color-black);
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
   }
 
@@ -57,6 +100,11 @@
 }
 
 @layer components {
+  main a[href]:hover,
+  .site-footer a[href]:hover {
+    color: var(--color-accent-text);
+  }
+
   .research-layout {
     box-sizing: border-box;
     width: 100%;
@@ -155,9 +203,28 @@
     overflow-wrap: break-word;
   }
 
+  .site-page > article,
+  .site-page > p,
+  .writing-excerpt,
+  .reading-prose {
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-size: var(--prose-size);
+    line-height: 1.65;
+    color: var(--color-prose);
+  }
+
+  .reading-prose p { margin-block: 0 1.5rem; }
+
+  .writing-page { max-width: 48rem; }
+  @media (min-width: 48rem) {
+    .writing-page { max-width: 50rem; }
+  }
+
   .site-page :where(h1, h2, h3, h4, h5, h6) {
     color: var(--color-black);
-    font-weight: 400;
+    font-family: var(--font-serif);
+    font-weight: 600;
     line-height: 1.3;
     margin-block: 2.5rem 1rem;
   }
@@ -187,6 +254,7 @@
   }
 
   .site-page time {
+    font-family: var(--font-sans);
     color: var(--color-muted);
     font-size: 0.875rem;
   }
@@ -211,8 +279,9 @@
 
   .publication-year h2,
   .outreach h3 {
+    font-family: var(--font-sans);
     margin: 0 0 1.5rem;
-    color: var(--color-accent);
+    color: var(--color-accent-text);
     font-size: 1.25rem;
     font-weight: 500;
   }
@@ -231,8 +300,9 @@
 
   .publication-entry h3,
   .outreach h4 {
+    font-family: var(--font-sans);
     margin: 0 0 0.5rem;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.5;
     font-weight: 600;
     text-wrap: pretty;
@@ -276,23 +346,26 @@
   }
 
   :root {
+    --prose-size: 1.125rem;
     --page-title-size: 2rem;
     --section-title-size: 1.5rem;
-    --entry-title-size: 1.25rem;
+    --writing-title-size: 1.5rem;
   }
   @media (min-width: 48rem) {
     :root {
+      --prose-size: 1.1875rem;
       --page-title-size: 2.5rem;
       --section-title-size: 1.75rem;
-      --entry-title-size: 1.375rem;
+      --writing-title-size: 1.625rem;
     }
   }
   .page-title {
     margin: 0;
     font-size: var(--page-title-size);
-    font-weight: 400;
+    font-family: var(--font-serif);
+    font-weight: 500;
     line-height: 1.2;
-    letter-spacing: -0.025em;
+    letter-spacing: normal;
     color: var(--color-black);
   }
   .site-page .page-subtitle,
@@ -309,10 +382,18 @@
     line-height: 1.5;
     text-transform: uppercase;
   }
-  .breadcrumb a[href],
-  .breadcrumb a[href]:hover {
+  .breadcrumb a[href] {
     color: var(--color-muted);
     font-weight: 600;
+  }
+  @media (max-width: 767px) {
+    .breadcrumb { flex-wrap: nowrap; white-space: nowrap; }
+    .breadcrumb > :not(:last-child) { flex-shrink: 0; }
+    .breadcrumb > :last-child {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   .post-date {
     display: block;
@@ -323,8 +404,7 @@
   }
   .section-title,
   .site-page > h2,
-  .site-page > article h2 { font-size: var(--section-title-size); font-weight: 500; }
-  .outreach h4 { font-size: var(--entry-title-size); }
+  .site-page > article h2 { font-family: var(--font-serif); font-size: var(--section-title-size); font-weight: 500; line-height: 1.3; }
   .writing-list { border-top: 1px solid #dedbd6; padding-top: 2rem; }
   .writing-list > article + article {
     margin-top: 2.5rem;
@@ -332,13 +412,12 @@
     border-top: 1px solid #dedbd6;
   }
   .writing-list > article > header { margin-bottom: 1.5rem; }
-  .writing-list > article > header h2 { margin: 0 0 0.5rem; font-size: var(--entry-title-size); }
+  .writing-list > article > header h2 { margin: 0 0 0.5rem; font-size: var(--writing-title-size); }
   .writing-list > article > header h2 a { font-weight: 600; }
   .writing-summary { margin: 0.75rem 0 0; }
   .writing-more { margin: 0; }
-  .writing-list a:hover { color: var(--color-accent); }
   .writing-pagination { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 3rem; font-size: 1rem; }
-  .writing-pagination [aria-current] { color: var(--color-accent); font-weight: 600; }
+  .writing-pagination [aria-current] { color: var(--color-accent-text); font-weight: 600; }
   .writing-pagination a, .writing-pagination span { padding: 0.5rem; }
 
   .outreach-jumps {

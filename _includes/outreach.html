@@ -10,7 +10,7 @@
     <section aria-labelledby="{{ section_id }}">
       <header>
         <h2 id="{{ section_id }}">{{ section_title | escape }}</h2>
-        <p>{%- if collection == 'organisation' -%}Workshops I help organise.{%- else -%}Presentations and supporting material.{%- endif -%}</p>
+        <p>{%- if collection == 'organisation' -%}Workshop organisation and research-group coordination.{%- else -%}Presentations and supporting material.{%- endif -%}</p>
       </header>
       <div class="outreach-content">
       {%- assign years = site.data.outreach[collection] | group_by: 'year' | sort: 'name' | reverse -%}
@@ -27,7 +27,7 @@
                     {%- assign destination = link.url -%}
                     {%- assign first_character = destination | slice: 0, 1 -%}
                     {%- if first_character == '/' -%}{%- assign destination = destination | relative_url -%}{%- endif -%}
-                    <a href="{{ destination | escape }}" aria-label="{{ link.label | escape }}: {{ entry.title | escape }}">{{ link.label | escape }}{%- unless first_character == '/' -%} {{ external_arrow }}{%- endunless -%}</a>
+                    <a href="{{ destination | escape }}" aria-label="{{ link.label | escape }}: {{ entry.title | escape }}">{{ link.label | escape }} {{ external_arrow }}</a>
                   {%- endfor -%}
                 </div>
               </li>

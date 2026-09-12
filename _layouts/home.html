@@ -11,9 +11,9 @@ layout: default
 <div class="mx-auto grid box-border w-full max-w-[90rem] items-start gap-12 px-6 py-14 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-10 md:px-10 lg:gap-16">
   {% include latest-news.html %}
   {% if content != empty %}
-    <section id="about" tabindex="-1" aria-labelledby="about-heading" class="min-w-0 w-full max-w-3xl scroll-mt-8 text-lg leading-8 text-black/70">
+    <section id="about" tabindex="-1" aria-labelledby="about-heading" class="min-w-0 w-full max-w-3xl scroll-mt-8">
       <h2 id="about-heading" class="section-title m-0 mb-7 text-black">About me</h2>
-      <div class="[&>p:first-child]:mt-0">
+      <div class="reading-prose">
         {{ content }}
       </div>
     </section>
