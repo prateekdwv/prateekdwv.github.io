@@ -36,5 +36,5 @@ exclude:
   - package-lock.json
   - node_modules
 
-# Google Analytics 4; enabled only in production builds.
-google_analytics: "G-23DL46TQD1"
+# GoatCounter; enabled only in production builds.
+goatcounter: "https://prateekdwv.goatcounter.com/count"
