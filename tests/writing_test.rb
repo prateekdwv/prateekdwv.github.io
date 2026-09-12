@@ -9,7 +9,7 @@ end
 
 root = File.expand_path('..', __dir__)
 Dir.mktmpdir('writing-test-') do |source|
-  %w[_layouts _includes _data writing blog/index.html feed.xml].each do |name|
+  %w[_layouts _includes _data _plugins writing blog/index.html feed.xml].each do |name|
     target = File.join(source, name)
     FileUtils.mkdir_p(File.dirname(target))
     FileUtils.cp_r(File.join(root, name), target)
@@ -58,7 +58,29 @@ Dir.mktmpdir('writing-test-') do |source|
       check(combined.scan('class="writing-more"').size == [count - 2, 0].max, 'Read more shown for complete or empty-tail posts')
       redirect = File.read(File.join(destination, 'blog/index.html'))
       check(redirect.include?("url=#{baseurl}/writing/"), 'Blog redirect broken')
+      feed = File.read(File.join(destination, 'feed.xml'))
+      check(feed.scan('<item>').size == count, 'Empty manual updates should keep feed blog-only')
+      check(!feed.include?('Publication data should not appear'), 'Publication data leaked into feed')
       puts "Writing: #{count} posts, base URL #{baseurl.inspect} passed"
     end
   end
+
+  File.write(File.join(source, '_data/feed_updates.yml'), <<~YAML)
+    - date: 2026-01-20
+      type: paper
+      title: "Paper accepted to ITCS 2026"
+      summary: "Our paper with <symbols> & details was accepted."
+      url: /research/#paper
+  YAML
+  File.write(File.join(posts, '2025-01-01-post.md'), "---\nlayout: post\ntitle: Older Post\n---\nBody\n")
+  destination = File.join(source, '_site')
+  config = Jekyll.configuration('source' => source, 'destination' => destination,
+    'config' => File.join(root, '_config.yml'), 'baseurl' => '/preview', 'quiet' => true)
+  Jekyll::Site.new(config).process
+  feed = File.read(File.join(destination, 'feed.xml'))
+  check(feed.index('Paper accepted to ITCS 2026') < feed.index('Older Post'), 'Manual update not sorted before older post')
+  check(feed.include?('<link>https://www.prateekdwivedi.in/preview/research/#paper</link>'), 'Manual update link not absolute')
+  check(feed.include?('<guid isPermaLink="false">updates:2026-01-20:paper-accepted-to-itcs-2026</guid>'), 'Manual update GUID unstable')
+  check(feed.include?('Our paper with &lt;symbols&gt; &amp; details was accepted.'), 'Manual update summary not XML escaped')
+  puts 'Feed manual update scenario passed'
 end

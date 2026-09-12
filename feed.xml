@@ -8,13 +8,18 @@ layout: null
     <description>{{ site.description | xml_escape }}</description>
     <link>{{ site.url | xml_escape }}</link>
     <atom:link href="{{ '/feed.xml' | absolute_url | xml_escape }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:20 %}
+    {% assign items = site | feed_items %}
+    {% for item in items %}
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{% if post.subtitle %}{{ post.subtitle | xml_escape }} — {% endif %}{{ post.content | strip_html | normalize_whitespace | truncatewords: 50 | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url | xml_escape }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url | xml_escape }}</guid>
+        <title>{{ item.title | xml_escape }}</title>
+        <description>{{ item.description | xml_escape }}</description>
+        <pubDate>{{ item.date | date_to_rfc822 }}</pubDate>
+        <link>{{ item.url | absolute_url | xml_escape }}</link>
+        {% if item.permalink %}
+          <guid isPermaLink="true">{{ item.guid | absolute_url | xml_escape }}</guid>
+        {% else %}
+          <guid isPermaLink="false">{{ item.guid | xml_escape }}</guid>
+        {% endif %}
       </item>
     {% endfor %}
   </channel>
