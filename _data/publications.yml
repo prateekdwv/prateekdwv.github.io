@@ -9,7 +9,9 @@
         - "Meena Mahajan"
       details:
         - "Submitted, 2026"
-      links: []
+      links:
+        - label: "Paper"
+          url: "/papers/real-communication.pdf"
 
     - title: "Lower Bounds in Algebraic Complexity via Symmetry and Homomorphism Polynomials"
       venue: STOC 2026
