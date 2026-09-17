@@ -11,7 +11,7 @@
         - "Submitted, 2026"
       links:
         - label: "Paper"
-          url: "/papers/real-communication.pdf"
+          url: "/papers/real_communication.pdf"
 
     - title: "Lower Bounds in Algebraic Complexity via Symmetry and Homomorphism Polynomials"
       venue: STOC 2026
