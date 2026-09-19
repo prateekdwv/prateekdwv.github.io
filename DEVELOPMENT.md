@@ -56,6 +56,22 @@ Tailwind scans Jekyll layouts, includes, and HTML page templates, including
 includes when it needs a styled component. Shared typography and colours belong
 in `_tailwind/main.css`; `--color-accent` is the rosy-copper colour.
 
+## Margin comments in posts
+
+Use normal Markdown footnotes; numbering and return links are automatic:
+
+```markdown
+This claim deserves some context.[^context]
+
+[^context]: Additional explanation with *emphasis* or a [link](https://example.com).
+```
+
+Full posts display comments in the right margin at widths of 1280px and above.
+Nearby comments stack without overlapping; repeated references share one comment.
+Keep comments concise. On smaller screens, in print, or without JavaScript, all
+comments appear under “Margin comments” at the end. Writing previews retain their
+existing footnote lists. No front matter or manual numbering is needed.
+
 ## Updating the hero photo
 
 Keep `img/ProfilePhoto.jpeg` as the original and JPEG fallback. After replacing it,

@@ -22,6 +22,7 @@ Dir.mktmpdir('writing-test-') do |source|
       FileUtils.rm_f(Dir[File.join(posts, '*')])
       count.times do |i|
         body = "Opening #{i}.\n\n## Shared heading\n\n1. First\n2. Second with *emphasis* and a footnote.[^1]\n\n[^1]: A reference.\n"
+        body += "\nRepeated reference.[^1]\n" if i.zero?
         body += "\n<!--more-->\n" if i.positive?
         body += "\nHidden remainder #{i}.\n" if i > 1
         body += "\n![Photo][photo]\n\n[photo]: {{ '/img/photo.png' | relative_url }}\n" if i == 2
@@ -48,6 +49,7 @@ Dir.mktmpdir('writing-test-') do |source|
         check(ids.uniq == ids, 'Duplicate preview IDs')
         html.scan(/href="#([^"]+)"/).flatten.each { |id| check(ids.include?(id), "Broken anchor #{id}") }
         check(!html.include?('bsky-comments.js'), 'Comments loaded on index')
+        check(!html.include?('margin-comments.js'), 'Margin positioning loaded on index')
         if count.positive?
           check(html.include?('<ol>') && html.include?('<em>emphasis</em>'), 'Preview formatting lost')
           check(html.include?('<h3 id="excerpt-'), 'Preview headings were not adjusted')
@@ -70,6 +72,11 @@ Dir.mktmpdir('writing-test-') do |source|
       end
       count.times do |i|
         html = File.read(File.join(destination, "blog/post-#{i}/index.html"))
+        check(html.include?("src=\"#{baseurl}/assets/js/margin-comments.js\" defer"), 'Margin comments script missing or base URL incorrect')
+        check(html.scan('<h2>Margin comments</h2>').size == 1, 'Margin comments heading missing or duplicated')
+        ids = html.scan(/\bid="([^"]+)"/).flatten
+        check(ids.uniq == ids, 'Duplicate IDs in full post')
+        html.scan(/href="#([^"]+)"/).flatten.each { |id| check(ids.include?(id), "Broken post anchor #{id}") }
         expected = case i
                    when 2 then "https://www.prateekdwivedi.in#{baseurl}/img/photo.png"
                    when 3 then 'https://example.org/photo.png?a=1&amp;b=2'
@@ -105,6 +112,7 @@ Dir.mktmpdir('writing-test-') do |source|
   config = Jekyll.configuration('source' => source, 'destination' => destination,
     'config' => File.join(root, '_config.yml'), 'baseurl' => '/preview', 'quiet' => true)
   Jekyll::Site.new(config).process
+  check(!File.read(File.join(destination, 'blog/post/index.html')).include?('margin-comments.js'), 'Margin script loaded on a post without footnotes')
   feed = File.read(File.join(destination, 'feed.xml'))
   check(feed.index('Paper accepted to ITCS 2026') < feed.index('Older Post'), 'Manual update not sorted before older post')
   check(feed.include?('<link>https://www.prateekdwivedi.in/preview/research/#paper</link>'), 'Manual update link not absolute')

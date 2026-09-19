@@ -1,9 +1,16 @@
 ---
 layout: default
 ---
-<article>
-  {{ content }}
+{% assign footnotes_open = '<div class="footnotes" role="doc-endnotes">' %}
+{% assign comments_open = '<div class="footnotes margin-comments" role="doc-endnotes" aria-label="Margin comments"><h2>Margin comments</h2>' %}
+<article{% if content contains footnotes_open %} class="post-with-comments"{% endif %}>
+  {% if content contains footnotes_open %}
+    <div class="post-content">{{ content | replace: footnotes_open, comments_open }}</div>
+  {% else %}
+    {{ content }}
+  {% endif %}
 </article>
+{% if content contains footnotes_open %}<script src="{{ '/assets/js/margin-comments.js' | relative_url }}" defer></script>{% endif %}
 <p><a href="{{ '/writing/' | relative_url }}">← All writing</a></p>
 
 {% if page.bluesky_post %}

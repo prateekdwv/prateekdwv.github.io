@@ -217,6 +217,41 @@
   .reading-prose p { margin-block: 0 1.5rem; }
 
   .writing-page { max-width: 48rem; }
+
+  .post-with-comments { position: relative; }
+  .post-content { display: flow-root; }
+  .site-page .margin-comments {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--color-muted);
+  }
+  .site-page .margin-comments h2 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .site-page .margin-comments p { margin-block: 0 0.5rem; }
+  .site-page .margin-comments li > :last-child { margin-bottom: 0; }
+  .site-page .margin-comments li::marker,
+  .site-page .post-with-comments a.footnote { color: var(--color-accent-text); }
+
+  @media screen and (min-width: 1280px) {
+    .has-margin-comments { padding-bottom: var(--margin-comments-space, 0px); }
+    .has-margin-comments .margin-comments {
+      position: absolute;
+      top: 0;
+      left: calc(100% + 56px);
+      width: 200px;
+    }
+    .has-margin-comments .margin-comments h2 { display: none; }
+    .has-margin-comments .margin-comments > ol { margin: 0; padding: 0; }
+    .has-margin-comments .margin-comments > ol > li {
+      position: absolute;
+      width: 100%;
+      margin: 0;
+    }
+  }
   @media (min-width: 48rem) {
     .writing-page { max-width: 50rem; }
   }
@@ -262,6 +297,14 @@
   .site-page img {
     max-width: 100%;
     height: auto;
+  }
+
+  .site-page figcaption {
+    margin-top: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--color-muted);
   }
 
   .site-page pre {
