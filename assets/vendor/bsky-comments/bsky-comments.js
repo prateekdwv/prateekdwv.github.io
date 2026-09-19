@@ -10,9 +10,6 @@ class v extends HTMLElement {
     o(this, "_post", null);
     o(this, "_uri", null);
     o(this, "_service", m);
-    o(this, "_iconLike", "❤️");
-    o(this, "_iconReply", "💬");
-    o(this, "_iconRepost", "♻️");
     o(this, "_sortOrder", "asc");
     o(this, "_depth", 10);
     o(this, "_data", null);
@@ -22,7 +19,7 @@ class v extends HTMLElement {
     o(this, "_abortController", null);
   }
   static get observedAttributes() {
-    return ["post", "uri", "service", "icon-like", "icon-reply", "icon-repost", "sort", "depth"];
+    return ["post", "uri", "service", "sort", "depth"];
   }
   attributeChangedCallback(e, s, t) {
     if (s !== t) {
@@ -35,15 +32,6 @@ class v extends HTMLElement {
           break;
         case "service":
           this._service = t || m;
-          break;
-        case "icon-like":
-          this._iconLike = t || "❤️";
-          break;
-        case "icon-reply":
-          this._iconReply = t || "💬";
-          break;
-        case "icon-repost":
-          this._iconRepost = t || "♻️";
           break;
         case "sort":
           this._sortOrder = t === "desc" ? "desc" : "asc";
@@ -148,10 +136,10 @@ class v extends HTMLElement {
         </div>
         <div class="bsky-body"><p>${this.renderRichText(s.record)}</p></div>
         <div class="bsky-actions">
-          <span class="bsky-reply" aria-label="${this.countLabel(s.replyCount, "reply", "replies")}"><span class="bsky-icon" aria-hidden="true">${this._iconReply}</span>${s.replyCount ?? 0}</span>
-          <span class="bsky-repost" aria-label="${this.countLabel(s.repostCount, "repost")}"><span class="bsky-icon" aria-hidden="true">${this._iconRepost}</span>${s.repostCount ?? 0}</span>
-          <span class="bsky-like" aria-label="${this.countLabel(s.likeCount, "like")}"><span class="bsky-icon" aria-hidden="true">${this._iconLike}</span>${s.likeCount ?? 0}</span>
-          <a href="${i}" target="_blank" rel="noopener noreferrer" class="bsky-comment-reply" aria-label="Reply to ${this.escapeHtml(s.author.displayName || s.author.handle)} on Bluesky">↩</a>
+          <span class="bsky-reply">${this.countLabel(s.replyCount, "reply", "replies")}</span>
+          <span class="bsky-repost">${this.countLabel(s.repostCount, "repost")}</span>
+          <span class="bsky-like">${this.countLabel(s.likeCount, "like")}</span>
+          <a href="${i}" target="_blank" rel="noopener noreferrer" class="bsky-comment-reply" aria-label="Reply to ${this.escapeHtml(s.author.displayName || s.author.handle)} on Bluesky">Reply on Bluesky</a>
         </div>
         ${n}
       </div>
@@ -185,9 +173,9 @@ class v extends HTMLElement {
     this.innerHTML = `
       <div class="bsky-container">
         <div class="bsky-summary" aria-label="Bluesky post activity">
-          <a href="${e}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">${this._iconLike}</span> ${this.countLabel(this._data.post.likeCount, "like")}</a>
-          <a href="${e}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">${this._iconRepost}</span> ${this.countLabel(this._data.post.repostCount, "repost")}</a>
-          <a href="${e}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">${this._iconReply}</span> ${this.countLabel(this._data.post.replyCount, "reply", "replies")}</a>
+          <a href="${e}" target="_blank" rel="noopener noreferrer">${this.countLabel(this._data.post.likeCount, "like")}</a>
+          <a href="${e}" target="_blank" rel="noopener noreferrer">${this.countLabel(this._data.post.repostCount, "repost")}</a>
+          <a href="${e}" target="_blank" rel="noopener noreferrer">${this.countLabel(this._data.post.replyCount, "reply", "replies")}</a>
         </div>
         <h2>Comments</h2>
         <p>Join the conversation by <a href="${e}" target="_blank" rel="noopener noreferrer">replying on Bluesky</a>.</p>
