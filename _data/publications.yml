@@ -1,5 +1,19 @@
 - year: 2026
   publications:
+    - title: "Depth Hierarchies for Symmetric Algebraic Circuits"
+      kind: Manuscript
+      coauthors:
+        - "Anuj Dawar"
+        - "Benedikt Pago"
+        - "Tim Seppelt"
+      details:
+        - "Submitted, 2026"
+      links:
+        - label: "Paper"
+          url: "/papers/depth-hierarchy-symACT.pdf"
+        - label: "Lean formalisation"
+          url: "https://laxarchive.org/lax-461425/"
+
     - title: "Tight lower bounds for algebraic communication and applications"
       kind: Manuscript
       coauthors:
