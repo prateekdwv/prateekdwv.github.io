@@ -16,6 +16,7 @@ Dir.mktmpdir('writing-test-') do |source|
     FileUtils.cp_r(File.join(root, name), target)
   end
   posts = File.join(source, '_posts')
+  File.write(File.join(source, '_data/feed_updates.yml'), '[]')
   FileUtils.mkdir_p(posts)
   ['', '/preview'].each do |baseurl|
     [0, 1, 5, 6, 10, 11].each do |count|

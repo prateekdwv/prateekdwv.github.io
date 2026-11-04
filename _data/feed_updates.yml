@@ -1,3 +1,11 @@
 # Add an item here only when you want RSS/email subscribers to receive
 # a non-blog update. Publication metadata changes do not affect the feed.
-[]
+- date: 2026-11-04
+  type: paper
+  title: "Depth Hierarchies for Symmetric Algebraic Circuits"
+  summary: >-
+    A new preprint with Anuj Dawar, Benedikt Pago, and Tim Seppelt,
+    <strong><a href="https://www.prateekdwivedi.in/papers/depth-hierarchy-symACT.pdf">“Depth Hierarchies for Symmetric Algebraic Circuits”</a></strong>, is now online.
+    All the proofs are verified using Lean and published on the
+    <a href="https://laxarchive.org/lax-461425/">Lax Lean Archive</a>.
+  url: /papers/depth-hierarchy-symACT.pdf
