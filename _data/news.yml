@@ -2,7 +2,7 @@
 # Text supports Markdown. The homepage shows the three most recent entries.
 - date: 2026-11-04
   text: >-
-    A new preprint with Anuj Dawar, Benedikt Pago, and Tim Seppelt,
+    A new preprint with Anuj Dawar, Benedikt Pago, and Tim Seppelt,
     **[“Depth Hierarchies for Symmetric Algebraic Circuits”](https://www.prateekdwivedi.in/papers/depth-hierarchy-symACT.pdf)**, is now online.
     All the proofs are verified using Lean and published on the
     [Lax Lean Archive](https://laxarchive.org/lax-461425/).
