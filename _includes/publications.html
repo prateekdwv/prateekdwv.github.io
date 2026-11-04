@@ -5,7 +5,7 @@
       <h2 id="publications-{{ year_group.year }}">{{ year_group.year }}</h2>
       <ul class="publication-list">
         {% for publication in year_group.publications %}
-          <li class="publication-entry">
+          <li class="publication-entry"{% if publication.diagram %} data-diagram="{{ publication.diagram | escape }}"{% endif %}>
             <article aria-labelledby="paper-{{ year_group.year }}-{{ forloop.index }}">
               <h3 id="paper-{{ year_group.year }}-{{ forloop.index }}">{{ publication.title | escape }}</h3>
               {% if publication.coauthors.size > 0 %}

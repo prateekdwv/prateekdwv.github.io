@@ -15,6 +15,7 @@
           url: "https://laxarchive.org/lax-461425/"
 
     - title: "Tight lower bounds for algebraic communication and applications"
+      diagram: polynomial-evaluation
       kind: Manuscript
       coauthors:
         - "Manon Blanc"

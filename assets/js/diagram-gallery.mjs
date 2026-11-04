@@ -21,7 +21,10 @@ async function initialize(root) {
       loading: 'lazy', decoding: 'async' });
     link.append(img);
     gallery.append(link);
-    return { link, img, item, yearIndex: years.indexOf(item.year) };
+    const yearIndex = years.indexOf(item.year);
+    const anchor = [...headings[yearIndex].parentElement.querySelectorAll('[data-diagram]')]
+      .find(entry => entry.dataset.diagram === item.id) ?? headings[yearIndex];
+    return { link, img, item, yearIndex, anchor };
   });
   if (document.fonts) await document.fonts.ready;
   gallery.hidden = false;
@@ -31,12 +34,13 @@ async function initialize(root) {
     const top = gallery.getBoundingClientRect().top;
     const bottom = column.getBoundingClientRect().bottom;
     const positions = headings.map(heading => heading.getBoundingClientRect().top);
-    links.forEach(({ link, img, item, yearIndex }, index) => {
+    links.forEach(({ link, img, item, yearIndex, anchor }, index) => {
+      const anchorTop = anchor.getBoundingClientRect().top;
       // 38px frame padding plus 32px clearance before the next year.
       const available = mobile ? 282 : Math.min(282,
-        (positions[yearIndex + 1] ?? bottom) - positions[yearIndex] - 70);
+        (positions[yearIndex + 1] ?? bottom) - anchorTop - 70);
       link.hidden = (mobile && index >= 3) || available <= 0;
-      link.style.top = mobile ? '' : `${positions[yearIndex] - top}px`;
+      link.style.top = mobile ? '' : `${anchorTop - top}px`;
       img.style.maxHeight = `${Math.max(0, available)}px`;
       if (!link.hidden && !img.hasAttribute('src')) img.src = item.url;
     });

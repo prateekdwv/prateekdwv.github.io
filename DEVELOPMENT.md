@@ -174,6 +174,11 @@ Only selected images are loaded; clicking one opens the full SVG. Filenames
 provide accessible link labels, so choose descriptive names. Without JavaScript,
 the publication list remains visible and the optional diagrams are omitted.
 
+To align a diagram with a specific paper instead, add `diagram: filename-without-extension`
+to that paper in `_data/publications.yml`. The paper and diagram must share a year.
+For example, `diagram: polynomial-evaluation` attaches Alice and Bob to the
+communication-complexity manuscript, even when earlier entries are added.
+
 Run `npm run test:diagrams` to check real compilation, cache invalidation,
 failure handling, and selection logic. Tests use temporary fixtures and never
 publish example diagrams. CI runs these checks and `npm run build` on
